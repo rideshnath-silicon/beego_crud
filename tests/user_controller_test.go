@@ -7,32 +7,10 @@ import (
 	"fmt"
 	"net/http"
 	"net/http/httptest"
-	"path/filepath"
-	"runtime"
 	"testing"
 
-	"github.com/beego/beego/v2/client/orm"
 	beego "github.com/beego/beego/v2/server/web"
 )
-
-func init() {
-	orm.RegisterDriver("postgres", orm.DRPostgres)
-	orm.RegisterDataBase("default", "postgres", "user=postgres password=root dbname=mydb sslmode=disable")
-	// orm.RunSyncdb("default", false, true)
-	_, file, _, _ := runtime.Caller(0)
-	apppath, _ := filepath.Abs(filepath.Dir(filepath.Join(file, ".."+string(filepath.Separator))))
-	beego.TestBeegoInit(apppath)
-}
-
-func RunControllerRoute(endPoint string, r *http.Request, ctrl beego.ControllerInterface, tokan string, methodFuction string) *httptest.ResponseRecorder {
-	r.Header.Set("Authorization", tokan)
-	w := httptest.NewRecorder()
-	router := beego.NewControllerRegister()
-	router.InsertFilter(endPoint, beego.BeforeRouter, middleware.JWTMiddleware, beego.WithCaseSensitive(false))
-	router.Add(endPoint, ctrl, beego.WithRouterMethods(ctrl, methodFuction))
-	router.ServeHTTP(w, r)
-	return w
-}
 
 var user_ctrl = controllers.UserController{}
 
@@ -64,7 +42,7 @@ func TestLoginUser(t *testing.T) {
 func TestGetusers(t *testing.T) {
 	t.Run("Get All User", func(t *testing.T) {
 		endPoint := "/v1/user/users"
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNDY4ODl9.t-cNDRqPHygAu1yGHjOtpJWvhj1qaBk0WpTGHxM9Vm4"
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNTIwMTV9.c4coDUyGulnquGrQZ3ENAF3jXC5zCHoOQ9bh2jhbLf4"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
 
 		r, err := http.NewRequest("GET", endPoint, nil)

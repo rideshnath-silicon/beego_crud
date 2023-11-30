@@ -8,6 +8,29 @@ import (
 )
 
 func TestUserModels(t *testing.T) {
+	t.Run("Register new user", func(t *testing.T) {
+		TruncateTable("users")
+		var user = models.NewUserRequest{
+			FirstName:   "Devendra",
+			LastName:    "pohekar",
+			Email:       "rideshnath.siliconithub@gmail.com",
+			PhoneNumber: "1234567890",
+			Role:        "developer",
+			Country:     "India",
+			Age:         24,
+			Password:    "123456",
+		}
+		data, err := models.InsertNewUser(user)
+		if err != nil {
+			t.Errorf(err.Error())
+			return
+		}
+		if data.Id != 1 {
+			t.Errorf("error in register")
+			return
+		}
+		t.Log(data)
+	})
 	t.Run("Get All User", func(t *testing.T) {
 		data, err := models.GetAllUser()
 		if err != nil {
@@ -32,24 +55,6 @@ func TestUserModels(t *testing.T) {
 		}
 		t.Log(data)
 	})
-	t.Run("Register new user", func(t *testing.T) {
-		var user = models.NewUserRequest{
-			FirstName:   "Devendra",
-			LastName:    "pohekar",
-			Email:       "devendrapohekar.siliconithub@gmail.com",
-			PhoneNumber: "1234567890",
-			Role:        "developer",
-			Country:     "India",
-			Age:         24,
-			Password:    "123456",
-		}
-		data, err := models.InsertNewUser(user)
-		if err != nil {
-			t.Errorf(err.Error())
-			return
-		}
-		t.Log(data)
-	})
 	t.Run("Login user", func(t *testing.T) {
 		username := "1234567890"
 		password := "123456"
@@ -62,10 +67,10 @@ func TestUserModels(t *testing.T) {
 	})
 	t.Run("Update user", func(t *testing.T) {
 		var user = models.UpdateUserRequest{
-			Id:          2,
+			Id:          1,
 			FirstName:   "Devendra",
 			LastName:    "pohekar",
-			Email:       "devendrapohekar.siliconithub@gmail.com",
+			Email:       "rideshnath.siliconithub@gmail.com",
 			PhoneNumber: "1234567890",
 			Role:        "deve",
 			Country:     "India",

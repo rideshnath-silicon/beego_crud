@@ -5,7 +5,9 @@ import (
 	"log"
 	"testing"
 )
+
 func TestHelpers(t *testing.T) {
+
 	t.Run("Check Hashdata", func(t *testing.T) {
 		password := "123456"
 		data, err := helpers.HashData(password)

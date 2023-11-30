@@ -65,13 +65,14 @@ func GetAllUser() ([]Users, error) {
 	return user, nil
 }
 
-func InsertNewUser(Data NewUserRequest) (interface{}, error) {
+func InsertNewUser(Data NewUserRequest) (Users, error) {
 	o := orm.NewOrm()
+	var user Users
 	pass, err := helpers.HashData(Data.Password)
 	if err != nil {
-		return nil, err
+		return user, err
 	}
-	var user = Users{
+	user = Users{
 		FirstName:   Data.FirstName,
 		LastName:    Data.LastName,
 		Country:     Data.Country,
@@ -82,9 +83,12 @@ func InsertNewUser(Data NewUserRequest) (interface{}, error) {
 		Role:        Data.Role,
 		CreatedAt:   time.Now(),
 	}
-	data, err := o.Insert(&user)
+	num, err := o.Insert(&user)
 	if err != nil {
-		return data, err
+		return user, err
+	}
+	if num == 0 {
+		return user, errors.New("error to insert data")
 	}
 	return user, nil
 }
