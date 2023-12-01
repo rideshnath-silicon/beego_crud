@@ -1,7 +1,8 @@
 swagger: "2.0"
 info:
   title: beego Test API
-  description: beego has a very cool tools to autogenerate documents for your API
+  description: |
+    beego has a very cool tools to autogenerate documents for your API
   version: 1.0.0
   termsOfService: http://beego.me/
   contact:
@@ -10,4 +11,130 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
 basePath: /v1
-paths: {}
+paths:
+  /user/register:
+    post:
+      tags:
+      - user
+      operationId: UserController.Insert New User
+      parameters:
+      - in: body
+        name: body
+        description: Insert New User
+        required: true
+        schema:
+          $ref: '#/definitions/models.NewUserRequest'
+      responses:
+        "201":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Users'
+        "403":
+          description: ""
+  /user/users:
+    get:
+      tags:
+      - user
+      description: |-
+        get Users
+        <br>
+      operationId: UserController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Users'
+        "403":
+          description: ""
+definitions:
+  models.NewUserRequest:
+    title: NewUserRequest
+    type: object
+    properties:
+      age:
+        type: integer
+        format: int64
+      country_id:
+        type: integer
+        format: int64
+      email:
+        type: string
+      first_name:
+        type: string
+      last_name:
+        type: string
+      password:
+        type: string
+      phone_number:
+        type: string
+      role:
+        type: string
+  models.Users:
+    title: Users
+    type: object
+    properties:
+      CreatedAt:
+        type: string
+        format: datetime
+      DeletedAt:
+        type: string
+        format: datetime
+      Otp:
+        type: string
+      UpdatedAt:
+        type: string
+        format: datetime
+      Verified:
+        type: string
+      age:
+        type: integer
+        format: int64
+      country_id:
+        type: integer
+        format: int64
+      email:
+        type: string
+      first_name:
+        type: string
+      last_name:
+        type: string
+      password:
+        type: string
+      phone_number:
+        type: string
+      role:
+        type: string
+      user_id:
+        type: integer
+        format: int32

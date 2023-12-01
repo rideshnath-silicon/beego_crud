@@ -12,6 +12,19 @@ type UserController struct {
 	beego.Controller
 }
 
+// GetAll ...
+// @Title Get All
+// @Description get Users
+// @Param	query	query	string	false	"Filter. e.g. col1:v1,col2:v2 ..."
+// @Param	fields	query	string	false	"Fields returned. e.g. col1,col2 ..."
+// @Param	sortby	query	string	false	"Sorted-by fields. e.g. col1,col2 ..."
+// @Param	order	query	string	false	"Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ..."
+// @Param	limit	query	string	false	"Limit the size of result set. Must be an integer"
+// @Param	offset	query	string	false	"Start position of result set. Must be an integer"
+// @Param   Authorization   header  string  true  "Bearer YourAccessToken"
+// @Success 200 {object} models.Users
+// @Failure 403
+// @router /users [get]
 func (c *UserController) GetAllUser() {
 	if c.Ctx.Request.Method != "GET" {
 		c.Ctx.Output.SetStatus(http.StatusMethodNotAllowed)
@@ -24,14 +37,21 @@ func (c *UserController) GetAllUser() {
 		return
 	}
 	var output []models.UserDetailsRequest
-	for i := 0; i < len(user); i++ {
-		userDetails := models.UserDetailsRequest{Id: user[i].Id, FirstName: user[i].FirstName, LastName: user[i].LastName, Email: user[i].Email, Country: user[i].Country, Age: user[i].Age}
+	for _, user := range user {
+		userDetails := models.UserDetailsRequest{Id: user.Id, FirstName: user.FirstName, LastName: user.LastName, Email: user.Email, Country: user.Country, Age: user.Age}
 		output = append(output, userDetails)
 	}
 
 	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1000)
 }
 
+// PostRegisterNewUser ...
+// @Title Insert New User
+// @Desciption new users
+// @Param body body models.NewUserRequest true "Insert New User"
+// @Success 201 {object} models.Users
+// @Failure 403
+// @router /register [post]
 func (c *UserController) PostRegisterNewUser() {
 	var bodyData models.NewUserRequest
 	if err := c.ParseForm(&bodyData); err != nil {
@@ -133,7 +153,7 @@ func (c *UserController) SendOtp() {
 		helpers.ApiFailure(c.Ctx, err.Error(), http.StatusBadRequest, 1001)
 		return
 	}
-	otp, err := helpers.SendMailOTp(output.Email, output.FirstName) 
+	otp, err := helpers.SendMailOTp(output.Email, output.FirstName)
 	if err != nil {
 		helpers.ApiFailure(c.Ctx, err.Error(), http.StatusBadRequest, 1001)
 		return
@@ -261,8 +281,8 @@ func (c *UserController) GetVerifiedUsers() {
 	}
 
 	var output []models.UserDetailsRequest
-	for i := 0; i < len(user); i++ {
-		userDetails := models.UserDetailsRequest{Id: user[i].Id, FirstName: user[i].FirstName, LastName: user[i].LastName, Email: user[i].Email, Country: user[i].Country, Age: user[i].Age}
+	for _, user := range user {
+		userDetails := models.UserDetailsRequest{Id: user.Id, FirstName: user.FirstName, LastName: user.LastName, Email: user.Email, Country: user.Country, Age: user.Age}
 		output = append(output, userDetails)
 	}
 	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1000)
@@ -281,8 +301,8 @@ func (c *UserController) SearchUser() {
 		return
 	}
 	var output []models.UserDetailsRequest
-	for i := 0; i < len(user); i++ {
-		userDetails := models.UserDetailsRequest{Id: user[i].Id, LastName: user[i].LastName, Email: user[i].Email, FirstName: user[i].FirstName, Country: user[i].Country, Age: user[i].Age}
+	for _, user := range user {
+		userDetails := models.UserDetailsRequest{Id: user.Id, FirstName: user.FirstName, LastName: user.LastName, Email: user.Email, Country: user.Country, Age: user.Age}
 		output = append(output, userDetails)
 	}
 	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1000)

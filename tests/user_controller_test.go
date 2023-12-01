@@ -41,8 +41,8 @@ func TestLoginUser(t *testing.T) {
 
 func TestGetusers(t *testing.T) {
 	t.Run("Get All User", func(t *testing.T) {
-		endPoint := "/v1/user/users"
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNTIwMTV9.c4coDUyGulnquGrQZ3ENAF3jXC5zCHoOQ9bh2jhbLf4"
+		endPoint := "/v1/users/users"
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDE0MzgzMzB9.e32LZsFTAehoXxR9v__btd9IiEoCMhMDDLV1tLXNyaU"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
 
 		r, err := http.NewRequest("GET", endPoint, nil)
@@ -61,7 +61,7 @@ func TestNewUser(t *testing.T) {
 	t.Run("new user", func(t *testing.T) {
 		endPoint := "/v1/user/register"
 		var jsonStr = []byte(`{"first_name":"Dwarkesh","last_name":"patel","email":"dwarkeshpatel@gmail.com","country":"India","role":"Developer","age":30,"phone_number":"1234567890","password":"123456"}`)
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNDY4ODl9.t-cNDRqPHygAu1yGHjOtpJWvhj1qaBk0WpTGHxM9Vm4"
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDE0MDk0MDR9.b_Faa-LR74VJubKMoO6NyCh2RPNLKxy_dNT_vs3iFTY"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
 
 		r, err := http.NewRequest("POST", endPoint, bytes.NewBuffer(jsonStr))

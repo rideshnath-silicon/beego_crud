@@ -9,14 +9,14 @@ import (
 
 func TestUserModels(t *testing.T) {
 	t.Run("Register new user", func(t *testing.T) {
-		TruncateTable("users")
+		// TruncateTable("users")
 		var user = models.NewUserRequest{
 			FirstName:   "Devendra",
 			LastName:    "pohekar",
 			Email:       "rideshnath.siliconithub@gmail.com",
 			PhoneNumber: "1234567890",
 			Role:        "developer",
-			Country:     "India",
+			Country:     1,
 			Age:         24,
 			Password:    "123456",
 		}
@@ -37,6 +37,9 @@ func TestUserModels(t *testing.T) {
 			t.Errorf(err.Error())
 			return
 		}
+		if len(data) == 0 {
+			t.Errorf("error :- No data found")
+		}
 		t.Log(data)
 	})
 	t.Run("Get UserByEmail", func(t *testing.T) {
@@ -45,6 +48,9 @@ func TestUserModels(t *testing.T) {
 			t.Errorf(err.Error())
 			return
 		}
+		if data.Email == "" {
+			t.Errorf("error :- No data found")
+		}
 		t.Log(data)
 	})
 	t.Run("Get UserId", func(t *testing.T) {
@@ -52,6 +58,9 @@ func TestUserModels(t *testing.T) {
 		if err != nil {
 			t.Errorf(err.Error())
 			return
+		}
+		if data.Email == "" {
+			t.Errorf("error :- No data found")
 		}
 		t.Log(data)
 	})
@@ -63,6 +72,9 @@ func TestUserModels(t *testing.T) {
 			t.Errorf(err.Error())
 			return
 		}
+		if data.Email == "" {
+			t.Errorf("error :- No data found")
+		}
 		t.Log(data)
 	})
 	t.Run("Update user", func(t *testing.T) {
@@ -73,7 +85,7 @@ func TestUserModels(t *testing.T) {
 			Email:       "rideshnath.siliconithub@gmail.com",
 			PhoneNumber: "1234567890",
 			Role:        "deve",
-			Country:     "India",
+			Country:     5,
 			Age:         23,
 		}
 		data, err := models.UpdateUser(user)
@@ -90,7 +102,18 @@ func TestUserModels(t *testing.T) {
 			t.Errorf(err.Error())
 			return
 		}
+		if len(data) == 0 {
+			t.Errorf("error :- No data found")
+		}
 		t.Log(data)
 	})
 
+}
+
+func TestGetcolumn(t *testing.T) {
+	err := models.SynchronizeModelWithDB("home_setting")
+	// datas, _ := json.Marshal(data)
+	if err != nil {
+		t.Errorf(err.Error())
+	}
 }
