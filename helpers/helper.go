@@ -11,6 +11,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/beego/beego/v2/core/config"
 	beego "github.com/beego/beego/v2/server/web"
 	"github.com/beego/beego/v2/server/web/context"
 	"github.com/dgrijalva/jwt-go"
@@ -145,8 +146,10 @@ func GenereateKeyForHomeSection(str1, str2 string) string {
 
 func SendMailOTp(userEmail string, name string) (string, error) {
 
-	from, _ := beego.AppConfig.String("EMAIL")
-	password, _ := beego.AppConfig.String("PASSWORD")
+	// from, _ := beego.AppConfig.String("EMAIL")
+	// password, _ := beego.AppConfig.String("PASSWORD")
+	from, _ := config.String("EMAIL")
+	password, _ := config.String("PASSWORD")
 	to := []string{
 		userEmail,
 	}

@@ -76,7 +76,7 @@ func UpdateCar(data UpdateCarRequest) (interface{}, error) {
 	}
 	fmt.Println(data)
 
-	num, err := o.Update(&car, "id", "car_name", "modified_by", "model", "car_type", "car_image", "update_at")
+	num, err := o.Update(&car, "id", "car_name", "modified_by", "model", "car_type", "car_image", "updated_at")
 	if err != nil {
 		return num, err
 	}

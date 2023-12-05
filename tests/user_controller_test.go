@@ -2,7 +2,6 @@ package test
 
 import (
 	"CarCrudv2/controllers"
-	"CarCrudv2/middleware"
 	"bytes"
 	"fmt"
 	"net/http"
@@ -17,7 +16,7 @@ var user_ctrl = controllers.UserController{}
 func TestLoginUser(t *testing.T) {
 	t.Run("Login User", func(t *testing.T) {
 		endPoint := "/v1/login/"
-		ctrl := &middleware.MiddlewareController{}
+
 		var jsonStr = []byte(`{
 			"username" : "rideshnath.siliconithub@gmail.com",
 			"password": "123456"
@@ -30,7 +29,7 @@ func TestLoginUser(t *testing.T) {
 		r.Header.Set("Content-Type", "application/json")
 		w := httptest.NewRecorder()
 		router := beego.NewControllerRegister()
-		router.Add(endPoint, ctrl, beego.WithRouterMethods(ctrl, "post:Login"))
+		router.Add(endPoint, &user_ctrl, beego.WithRouterMethods(&user_ctrl, "post:Login"))
 		router.ServeHTTP(w, r)
 		if w.Code != http.StatusOK {
 			t.Fatalf("Expected status code %d but got %d", http.StatusOK, w.Code)

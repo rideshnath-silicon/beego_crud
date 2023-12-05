@@ -1,0 +1,379 @@
+2023/12/05 17:49:41.560  [D] [main.go:48]  Debug message
+2023/12/05 17:49:45.601  [I] [main.go:49]  Info message
+2023/12/05 17:49:49.102  [W] [main.go:50]  Warning message
+2023/12/05 17:49:52.607  [E] [main.go:51]  Error message
+2023/12/05 17:49:56.031  [C] [main.go:52]  Critical message
+2023/12/05 17:49:59.571  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 17:50:59.964  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.144347ms|   match|[97;46m POST    [0m /v1/user/secure/search   r:/v1/user/secure/search
+2023/12/05 17:52:03.301  [D] [main.go:48]  Debug message
+2023/12/05 17:52:03.301  [I] [main.go:49]  Info message
+2023/12/05 17:52:03.301  [W] [main.go:50]  Warning message
+2023/12/05 17:52:03.301  [E] [main.go:51]  Error message
+2023/12/05 17:52:03.301  [C] [main.go:52]  Critical message
+2023/12/05 17:52:03.305  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 17:56:25.973  [D] [main.go:48]  Debug message
+2023/12/05 17:56:25.973  [I] [main.go:49]  Info message
+2023/12/05 17:56:25.973  [W] [main.go:50]  Warning message
+2023/12/05 17:56:25.973  [E] [main.go:51]  Error message
+2023/12/05 17:56:25.973  [C] [main.go:52]  Critical message
+2023/12/05 17:56:25.977  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 17:56:29.538  [D] [main.go:48]  Debug message
+2023/12/05 17:56:29.538  [I] [main.go:49]  Info message
+2023/12/05 17:56:29.538  [W] [main.go:50]  Warning message
+2023/12/05 17:56:29.538  [E] [main.go:51]  Error message
+2023/12/05 17:56:29.538  [C] [main.go:52]  Critical message
+2023/12/05 17:56:29.541  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 17:56:56.363  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.004584ms|   match|[97;44m GET     [0m /v1/user/secure/users   r:/v1/user/secure/users
+2023/12/05 18:01:26.471  [D] [main.go:51]  Debug message
+2023/12/05 18:01:26.471  [I] [main.go:52]  Info message
+2023/12/05 18:01:26.471  [W] [main.go:53]  Warning message
+2023/12/05 18:01:26.471  [E] [main.go:54]  Error message
+2023/12/05 18:01:26.471  [C] [main.go:55]  Critical message
+2023/12/05 18:01:26.475  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:10:56.935  [D] [main.go:48]  Debug message
+2023/12/05 18:10:56.935  [I] [main.go:49]  Info message
+2023/12/05 18:10:56.935  [W] [main.go:50]  Warning message
+2023/12/05 18:10:56.935  [E] [main.go:51]  Error message
+2023/12/05 18:10:56.935  [C] [main.go:52]  Critical message
+2023/12/05 18:10:56.938  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:11:13.991  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     79.204µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:11:13.992  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     70.324µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:11:13.992  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    1.36262ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:11:50.887  [D] [main.go:48]  Debug message
+2023/12/05 18:11:50.887  [I] [main.go:49]  Info message
+2023/12/05 18:11:50.887  [W] [main.go:50]  Warning message
+2023/12/05 18:11:50.887  [E] [main.go:51]  Error message
+2023/12/05 18:11:50.887  [C] [main.go:52]  Critical message
+2023/12/05 18:11:50.890  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:11:57.149  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     84.835µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:11:57.150  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     99.692µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:11:57.150  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.243442ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:14:30.117  [D] [main.go:48]  Debug message
+2023/12/05 18:14:30.117  [I] [main.go:49]  Info message
+2023/12/05 18:14:30.117  [W] [main.go:50]  Warning message
+2023/12/05 18:14:30.117  [E] [main.go:51]  Error message
+2023/12/05 18:14:30.117  [C] [main.go:52]  Critical message
+2023/12/05 18:14:30.121  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:14:34.217  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     83.653µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:14:34.217  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|    120.159µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:14:34.217  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.502412ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:15:03.638  [D] [main.go:48]  Debug message
+2023/12/05 18:15:03.638  [I] [main.go:49]  Info message
+2023/12/05 18:15:03.638  [W] [main.go:50]  Warning message
+2023/12/05 18:15:03.638  [E] [main.go:51]  Error message
+2023/12/05 18:15:03.638  [C] [main.go:52]  Critical message
+2023/12/05 18:15:03.642  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:15:04.510  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|    103.267µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:15:04.511  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     71.935µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:15:04.511  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.215512ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:15:05.970  [D] [main.go:48]  Debug message
+2023/12/05 18:15:05.971  [I] [main.go:49]  Info message
+2023/12/05 18:15:05.971  [W] [main.go:50]  Warning message
+2023/12/05 18:15:05.971  [E] [main.go:51]  Error message
+2023/12/05 18:15:05.971  [C] [main.go:52]  Critical message
+2023/12/05 18:15:05.974  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:15:41.621  [D] [main.go:48]  Debug message
+2023/12/05 18:15:41.621  [I] [main.go:49]  Info message
+2023/12/05 18:15:41.621  [W] [main.go:50]  Warning message
+2023/12/05 18:15:41.621  [E] [main.go:51]  Error message
+2023/12/05 18:15:41.621  [C] [main.go:52]  Critical message
+2023/12/05 18:15:41.625  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:15:47.505  [D] [main.go:48]  Debug message
+2023/12/05 18:15:47.505  [I] [main.go:49]  Info message
+2023/12/05 18:15:47.505  [W] [main.go:50]  Warning message
+2023/12/05 18:15:47.505  [E] [main.go:51]  Error message
+2023/12/05 18:15:47.505  [C] [main.go:52]  Critical message
+2023/12/05 18:15:47.509  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:16:16.805  [D] [main.go:48]  Debug message
+2023/12/05 18:16:16.805  [I] [main.go:49]  Info message
+2023/12/05 18:16:16.805  [W] [main.go:50]  Warning message
+2023/12/05 18:16:16.806  [E] [main.go:51]  Error message
+2023/12/05 18:16:16.806  [C] [main.go:52]  Critical message
+2023/12/05 18:16:16.809  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:16:22.007  [D] [main.go:48]  Debug message
+2023/12/05 18:16:22.007  [I] [main.go:49]  Info message
+2023/12/05 18:16:22.007  [W] [main.go:50]  Warning message
+2023/12/05 18:16:22.007  [E] [main.go:51]  Error message
+2023/12/05 18:16:22.007  [C] [main.go:52]  Critical message
+2023/12/05 18:16:22.011  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:16:23.664  [D] [main.go:48]  Debug message
+2023/12/05 18:16:23.664  [I] [main.go:49]  Info message
+2023/12/05 18:16:23.664  [W] [main.go:50]  Warning message
+2023/12/05 18:16:23.664  [E] [main.go:51]  Error message
+2023/12/05 18:16:23.664  [C] [main.go:52]  Critical message
+2023/12/05 18:16:23.668  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:16:30.829  [D] [main.go:48]  Debug message
+2023/12/05 18:16:30.830  [I] [main.go:49]  Info message
+2023/12/05 18:16:30.830  [W] [main.go:50]  Warning message
+2023/12/05 18:16:30.830  [E] [main.go:51]  Error message
+2023/12/05 18:16:30.830  [C] [main.go:52]  Critical message
+2023/12/05 18:16:30.833  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:16:37.664  [D] [main.go:48]  Debug message
+2023/12/05 18:16:37.664  [I] [main.go:49]  Info message
+2023/12/05 18:16:37.664  [W] [main.go:50]  Warning message
+2023/12/05 18:16:37.664  [E] [main.go:51]  Error message
+2023/12/05 18:16:37.664  [C] [main.go:52]  Critical message
+2023/12/05 18:16:37.668  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:16:40.158  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|      50.19µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js.map
+2023/12/05 18:16:40.160  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|      49.14µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js.map
+2023/12/05 18:16:40.191  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|     45.732µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css.map
+2023/12/05 18:16:42.395  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|    234.424µs|   match|[97;44m GET     [0m /swagger/
+2023/12/05 18:16:42.607  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     262.89µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/05 18:16:54.601  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     86.667µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:16:54.602  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     82.843µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:16:54.602  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.183477ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:17:12.472  [D] [main.go:48]  Debug message
+2023/12/05 18:17:12.472  [I] [main.go:49]  Info message
+2023/12/05 18:17:12.472  [W] [main.go:50]  Warning message
+2023/12/05 18:17:12.472  [E] [main.go:51]  Error message
+2023/12/05 18:17:12.472  [C] [main.go:52]  Critical message
+2023/12/05 18:17:12.475  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:17:26.484  [D] [main.go:48]  Debug message
+2023/12/05 18:17:26.484  [I] [main.go:49]  Info message
+2023/12/05 18:17:26.484  [W] [main.go:50]  Warning message
+2023/12/05 18:17:26.484  [E] [main.go:51]  Error message
+2023/12/05 18:17:26.484  [C] [main.go:52]  Critical message
+2023/12/05 18:17:26.487  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:17:51.335  [D] [main.go:48]  Debug message
+2023/12/05 18:17:51.335  [I] [main.go:49]  Info message
+2023/12/05 18:17:51.335  [W] [main.go:50]  Warning message
+2023/12/05 18:17:51.335  [E] [main.go:51]  Error message
+2023/12/05 18:17:51.335  [C] [main.go:52]  Critical message
+2023/12/05 18:17:51.339  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:17:57.579  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|    115.413µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:17:57.579  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     72.565µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:17:57.579  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.412621ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:18:44.100  [D] [main.go:48]  Debug message
+2023/12/05 18:18:44.100  [I] [main.go:49]  Info message
+2023/12/05 18:18:44.100  [W] [main.go:50]  Warning message
+2023/12/05 18:18:44.100  [E] [main.go:51]  Error message
+2023/12/05 18:18:44.100  [C] [main.go:52]  Critical message
+2023/12/05 18:18:44.103  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:18:49.393  [D] [main.go:48]  Debug message
+2023/12/05 18:18:49.393  [I] [main.go:49]  Info message
+2023/12/05 18:18:49.393  [W] [main.go:50]  Warning message
+2023/12/05 18:18:49.393  [E] [main.go:51]  Error message
+2023/12/05 18:18:49.393  [C] [main.go:52]  Critical message
+2023/12/05 18:18:49.396  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:19:03.420  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|    100.413µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:19:03.420  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     66.637µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:19:03.421  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.402103ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:23:48.336  [D] [main.go:48]  Debug message
+2023/12/05 18:23:48.336  [I] [main.go:49]  Info message
+2023/12/05 18:23:48.336  [W] [main.go:50]  Warning message
+2023/12/05 18:23:48.336  [E] [main.go:51]  Error message
+2023/12/05 18:23:48.336  [C] [main.go:52]  Critical message
+2023/12/05 18:23:48.340  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:23:50.006  [D] [main.go:48]  Debug message
+2023/12/05 18:23:50.006  [I] [main.go:49]  Info message
+2023/12/05 18:23:50.006  [W] [main.go:50]  Warning message
+2023/12/05 18:23:50.006  [E] [main.go:51]  Error message
+2023/12/05 18:23:50.006  [C] [main.go:52]  Critical message
+2023/12/05 18:23:50.010  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:24:57.903  [D] [main.go:48]  Debug message
+2023/12/05 18:24:57.903  [I] [main.go:49]  Info message
+2023/12/05 18:24:57.903  [W] [main.go:50]  Warning message
+2023/12/05 18:24:57.903  [E] [main.go:51]  Error message
+2023/12/05 18:24:57.903  [C] [main.go:52]  Critical message
+2023/12/05 18:24:57.907  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:25:07.445  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|    213.868µs|   match|[97;44m GET     [0m /swagger/
+2023/12/05 18:25:07.679  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    206.316µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/05 18:25:13.252  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     87.719µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:25:13.253  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     69.585µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:25:13.253  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    1.93377ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:25:38.595  [D] [main.go:48]  Debug message
+2023/12/05 18:25:38.595  [I] [main.go:49]  Info message
+2023/12/05 18:25:38.595  [W] [main.go:50]  Warning message
+2023/12/05 18:25:38.595  [E] [main.go:51]  Error message
+2023/12/05 18:25:38.595  [C] [main.go:52]  Critical message
+2023/12/05 18:25:38.598  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:26:14.391  [D] [main.go:48]  Debug message
+2023/12/05 18:26:14.391  [I] [main.go:49]  Info message
+2023/12/05 18:26:14.391  [W] [main.go:50]  Warning message
+2023/12/05 18:26:14.391  [E] [main.go:51]  Error message
+2023/12/05 18:26:14.391  [C] [main.go:52]  Critical message
+2023/12/05 18:26:14.395  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:26:19.405  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|    115.106µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:26:19.405  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     64.249µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:26:19.405  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.426775ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:26:46.180  [D] [main.go:48]  Debug message
+2023/12/05 18:26:46.180  [I] [main.go:49]  Info message
+2023/12/05 18:26:46.180  [W] [main.go:50]  Warning message
+2023/12/05 18:26:46.180  [E] [main.go:51]  Error message
+2023/12/05 18:26:46.180  [C] [main.go:52]  Critical message
+2023/12/05 18:26:46.183  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:27:08.128  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|    130.639µs|   match|[97;44m GET     [0m /swagger/
+2023/12/05 18:27:08.235  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    252.344µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/05 18:27:16.577  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     113.86µs| nomatch|[97;44m GET     [0m /v1/user/secure/users
+2023/12/05 18:27:16.577  [D] [router.go:1305]  |      127.0.0.1|[97;43m 401 [0m|     87.161µs| nomatch|[97;46m POST    [0m /v1/user/secure/search
+2023/12/05 18:27:16.577  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.456123ms|   match|[97;44m GET     [0m /v1/user/modulecheck   r:/v1/user/modulecheck
+2023/12/05 18:27:32.995  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    108.789µs|   match|[97;44m GET     [0m /v1/user/logout   r:/v1/user/logout
+2023/12/05 18:33:01.109  [D] [main.go:48]  Debug message
+2023/12/05 18:33:01.109  [I] [main.go:49]  Info message
+2023/12/05 18:33:01.109  [W] [main.go:50]  Warning message
+2023/12/05 18:33:01.109  [E] [main.go:51]  Error message
+2023/12/05 18:33:01.109  [C] [main.go:52]  Critical message
+2023/12/05 18:33:01.113  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:33:06.615  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     95.603µs|   match|[97;44m GET     [0m /swagger/
+2023/12/05 18:33:06.631  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     218.69µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/05 18:33:06.634  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    782.552µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/05 18:33:06.637  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    347.246µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/05 18:33:06.820  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    204.948µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/05 18:33:06.824  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|    101.668µs|   match|[97;44m GET     [0m /swagger/favicon-32x32.png
+2023/12/05 18:33:10.654  [D] [router.go:1305]  |            ::1|[90;47m 302 [0m|     25.655µs|   match|[97;44m GET     [0m /swagger
+2023/12/05 18:33:10.851  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|     23.555µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/05 18:33:31.968  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m| 873.908728ms|   match|[97;46m POST    [0m /v1/user/login   r:/v1/user/login
+2023/12/05 18:35:10.443  [D] [main.go:48]  Debug message
+2023/12/05 18:35:10.443  [I] [main.go:49]  Info message
+2023/12/05 18:35:10.443  [W] [main.go:50]  Warning message
+2023/12/05 18:35:10.443  [E] [main.go:51]  Error message
+2023/12/05 18:35:10.443  [C] [main.go:52]  Critical message
+2023/12/05 18:35:10.447  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:35:17.980  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    210.581µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/05 18:35:35.404  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m| 875.492387ms|   match|[97;46m POST    [0m /v1/user/login   r:/v1/user/login
+2023/12/05 18:36:48.237  [C] [config.go:500]  the request url is  /v1/car/update
+2023/12/05 18:36:48.237  [C] [config.go:501]  Handler crashed with error wrong db field/column name `update_at` for model `CarCrudv2/models.Car`
+2023/12/05 18:36:48.237  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/05 18:36:48.237  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/client/orm/db.go:88
+2023/12/05 18:36:48.237  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/client/orm/db.go:694
+2023/12/05 18:36:48.237  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/client/orm/orm.go:286
+2023/12/05 18:36:48.237  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/client/orm/orm.go:281
+2023/12/05 18:36:48.237  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/models/CarModels.go:79
+2023/12/05 18:36:48.237  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/carcontroller.go:206
+2023/12/05 18:36:48.237  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/05 18:36:48.237  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/05 18:36:48.237  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/05 18:36:48.237  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/05 18:36:48.237  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/05 18:36:48.237  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/05 18:36:48.237  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/05 18:36:48.237  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/05 18:38:55.722  [D] [main.go:48]  Debug message
+2023/12/05 18:38:55.722  [I] [main.go:49]  Info message
+2023/12/05 18:38:55.722  [W] [main.go:50]  Warning message
+2023/12/05 18:38:55.722  [E] [main.go:51]  Error message
+2023/12/05 18:38:55.722  [C] [main.go:52]  Critical message
+2023/12/05 18:38:55.726  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:41:12.296  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    8.12379ms|   match|[97;46m POST    [0m /v1/car/create   r:/v1/car/create
+2023/12/05 18:41:52.356  [C] [config.go:500]  the request url is  /v1/car/update
+2023/12/05 18:41:52.356  [C] [config.go:501]  Handler crashed with error wrong db field/column name `update_at` for model `CarCrudv2/models.Car`
+2023/12/05 18:41:52.356  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/05 18:41:52.356  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/client/orm/db.go:88
+2023/12/05 18:41:52.356  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/client/orm/db.go:694
+2023/12/05 18:41:52.356  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/client/orm/orm.go:286
+2023/12/05 18:41:52.356  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/client/orm/orm.go:281
+2023/12/05 18:41:52.356  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/models/CarModels.go:79
+2023/12/05 18:41:52.356  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/carcontroller.go:206
+2023/12/05 18:41:52.356  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/05 18:41:52.356  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/05 18:41:52.356  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/05 18:41:52.356  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/05 18:41:52.356  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/05 18:41:52.356  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/05 18:41:52.356  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/05 18:41:52.356  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/05 18:43:10.897  [D] [main.go:48]  Debug message
+2023/12/05 18:43:10.897  [I] [main.go:49]  Info message
+2023/12/05 18:43:10.897  [W] [main.go:50]  Warning message
+2023/12/05 18:43:10.897  [E] [main.go:51]  Error message
+2023/12/05 18:43:10.897  [C] [main.go:52]  Critical message
+2023/12/05 18:43:10.901  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:43:15.967  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   3.928935ms|   match|[97;43m PUT     [0m /v1/car/update   r:/v1/car/update
+2023/12/05 18:43:45.191  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.041352ms|   match|[97;46m POST    [0m /v1/car/create   r:/v1/car/create
+2023/12/05 18:49:09.544  [D] [main.go:48]  Debug message
+2023/12/05 18:49:09.544  [I] [main.go:49]  Info message
+2023/12/05 18:49:09.544  [W] [main.go:50]  Warning message
+2023/12/05 18:49:09.544  [E] [main.go:51]  Error message
+2023/12/05 18:49:09.544  [C] [main.go:52]  Critical message
+2023/12/05 18:49:09.548  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:49:11.775  [D] [main.go:48]  Debug message
+2023/12/05 18:49:11.776  [I] [main.go:49]  Info message
+2023/12/05 18:49:11.776  [W] [main.go:50]  Warning message
+2023/12/05 18:49:11.776  [E] [main.go:51]  Error message
+2023/12/05 18:49:11.776  [C] [main.go:52]  Critical message
+2023/12/05 18:49:11.779  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:54:34.979  [D] [main.go:48]  Debug message
+2023/12/05 18:54:34.979  [I] [main.go:49]  Info message
+2023/12/05 18:54:34.979  [W] [main.go:50]  Warning message
+2023/12/05 18:54:34.979  [E] [main.go:51]  Error message
+2023/12/05 18:54:34.979  [C] [main.go:52]  Critical message
+2023/12/05 18:54:34.983  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 18:54:42.220  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     68.842µs|   match|[97;44m GET     [0m /swagger/
+2023/12/05 18:54:42.231  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    162.511µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/05 18:54:42.232  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     259.46µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/05 18:54:42.233  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    690.654µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/05 18:54:42.372  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    218.001µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/05 18:54:42.388  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     62.526µs|   match|[97;44m GET     [0m /swagger/favicon-32x32.png
+2023/12/05 18:54:58.945  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m| 874.795696ms|   match|[97;46m POST    [0m /v1/user/login   r:/v1/user/login
+2023/12/05 18:56:10.665  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    2.42877ms|   match|[97;46m POST    [0m /v1/home/create   r:/v1/home/create
+2023/12/05 18:56:41.468  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   7.213934ms|   match|[97;46m POST    [0m /v1/home/create   r:/v1/home/create
+2023/12/05 19:00:53.063  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.892604ms|   match|[97;43m PUT     [0m /v1/home/update   r:/v1/home/update
+2023/12/05 19:02:34.143  [D] [main.go:48]  Debug message
+2023/12/05 19:02:34.143  [I] [main.go:49]  Info message
+2023/12/05 19:02:34.143  [W] [main.go:50]  Warning message
+2023/12/05 19:02:34.143  [E] [main.go:51]  Error message
+2023/12/05 19:02:34.143  [C] [main.go:52]  Critical message
+2023/12/05 19:02:34.146  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:03:51.970  [D] [main.go:48]  Debug message
+2023/12/05 19:03:51.970  [I] [main.go:49]  Info message
+2023/12/05 19:03:51.970  [W] [main.go:50]  Warning message
+2023/12/05 19:03:51.970  [E] [main.go:51]  Error message
+2023/12/05 19:03:51.970  [C] [main.go:52]  Critical message
+2023/12/05 19:03:51.973  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:04:26.142  [D] [main.go:48]  Debug message
+2023/12/05 19:04:26.142  [I] [main.go:49]  Info message
+2023/12/05 19:04:26.142  [W] [main.go:50]  Warning message
+2023/12/05 19:04:26.142  [E] [main.go:51]  Error message
+2023/12/05 19:04:26.142  [C] [main.go:52]  Critical message
+2023/12/05 19:04:26.146  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:04:35.376  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.405222ms|   match|[97;43m PUT     [0m /v1/home/update   r:/v1/home/update
+2023/12/05 19:08:35.327  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.025758ms|   match|[97;43m PUT     [0m /v1/home/update   r:/v1/home/update
+2023/12/05 19:09:08.293  [D] [main.go:48]  Debug message
+2023/12/05 19:09:08.293  [I] [main.go:49]  Info message
+2023/12/05 19:09:08.293  [W] [main.go:50]  Warning message
+2023/12/05 19:09:08.293  [E] [main.go:51]  Error message
+2023/12/05 19:09:08.293  [C] [main.go:52]  Critical message
+2023/12/05 19:09:08.297  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:09:12.374  [D] [main.go:48]  Debug message
+2023/12/05 19:09:12.374  [I] [main.go:49]  Info message
+2023/12/05 19:09:12.374  [W] [main.go:50]  Warning message
+2023/12/05 19:09:12.374  [E] [main.go:51]  Error message
+2023/12/05 19:09:12.374  [C] [main.go:52]  Critical message
+2023/12/05 19:09:12.378  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:09:12.722  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|  10.108785ms|   match|[97;43m PUT     [0m /v1/home/update   r:/v1/home/update
+2023/12/05 19:09:41.223  [D] [main.go:48]  Debug message
+2023/12/05 19:09:41.223  [I] [main.go:49]  Info message
+2023/12/05 19:09:41.223  [W] [main.go:50]  Warning message
+2023/12/05 19:09:41.223  [E] [main.go:51]  Error message
+2023/12/05 19:09:41.223  [C] [main.go:52]  Critical message
+2023/12/05 19:09:41.227  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:10:44.498  [D] [main.go:48]  Debug message
+2023/12/05 19:10:44.498  [I] [main.go:49]  Info message
+2023/12/05 19:10:44.498  [W] [main.go:50]  Warning message
+2023/12/05 19:10:44.498  [E] [main.go:51]  Error message
+2023/12/05 19:10:44.498  [C] [main.go:52]  Critical message
+2023/12/05 19:10:44.502  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:10:50.983  [D] [main.go:48]  Debug message
+2023/12/05 19:10:50.983  [I] [main.go:49]  Info message
+2023/12/05 19:10:50.983  [W] [main.go:50]  Warning message
+2023/12/05 19:10:50.984  [E] [main.go:51]  Error message
+2023/12/05 19:10:50.984  [C] [main.go:52]  Critical message
+2023/12/05 19:10:50.987  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:10:52.701  [D] [main.go:48]  Debug message
+2023/12/05 19:10:52.702  [I] [main.go:49]  Info message
+2023/12/05 19:10:52.702  [W] [main.go:50]  Warning message
+2023/12/05 19:10:52.702  [E] [main.go:51]  Error message
+2023/12/05 19:10:52.702  [C] [main.go:52]  Critical message
+2023/12/05 19:10:52.706  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:10:54.433  [D] [main.go:48]  Debug message
+2023/12/05 19:10:54.433  [I] [main.go:49]  Info message
+2023/12/05 19:10:54.433  [W] [main.go:50]  Warning message
+2023/12/05 19:10:54.433  [E] [main.go:51]  Error message
+2023/12/05 19:10:54.433  [C] [main.go:52]  Critical message
+2023/12/05 19:10:54.437  [I] [server.go:280]  http server Running on http://:8080
+2023/12/05 19:10:55.538  [D] [main.go:48]  Debug message
+2023/12/05 19:10:55.538  [I] [main.go:49]  Info message
+2023/12/05 19:10:55.538  [W] [main.go:50]  Warning message
+2023/12/05 19:10:55.538  [E] [main.go:51]  Error message
+2023/12/05 19:10:55.538  [C] [main.go:52]  Critical message
+2023/12/05 19:10:55.542  [I] [server.go:280]  http server Running on http://:8080

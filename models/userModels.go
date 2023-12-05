@@ -51,16 +51,19 @@ func GetUserDetails(id interface{}) (Users, error) {
 	return user, nil
 }
 
-func GetAllUser() ([]Users, error) {
+func GetAllUser() ([]orm.Params, error) {
 	o := orm.NewOrm()
 	// orm.Debug = true
-	var user []Users
-	num, err := o.QueryTable(new(Users)).All(&user)
+	var user []orm.Params
+	sqlQuery := `
+		SELECT u.id as user_id , u.first_name as name, u.last_name as last_name , u.email  as user_email , u.age as user_age, c.country_name
+		FROM users as u
+		JOIN countries as c ON c.id = u.country	
+		
+	`
+	_, err := o.Raw(sqlQuery).Values(&user)
 	if err != nil {
 		return nil, err
-	}
-	if num == 0 {
-		return user, errors.New("error :- Data Not Found")
 	}
 	return user, nil
 }

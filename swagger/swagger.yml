@@ -6,12 +6,358 @@ info:
   version: 1.0.0
   termsOfService: http://beego.me/
   contact:
-    email: astaxie@gmail.com
+    email: rideshnath.siliconithub@gmail.com
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
 basePath: /v1
 paths:
+  /car/:
+    post:
+      tags:
+      - car
+      operationId: CarController.get car
+      parameters:
+      - in: body
+        name: body
+        description: get perticuler car
+        required: true
+        schema:
+          $ref: '#/definitions/models.GetcarRequest'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /car/cars:
+    get:
+      tags:
+      - car
+      operationId: CarController.get cars
+      parameters:
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /car/create:
+    post:
+      tags:
+      - car
+      operationId: CarController.new car
+      parameters:
+      - in: formData
+        name: car_name
+        description: Car name
+        required: true
+        type: string
+      - in: formData
+        name: modified_by
+        description: modified by
+        required: true
+        type: string
+      - in: formData
+        name: model
+        description: Car Model
+        required: true
+        type: string
+      - in: formData
+        name: type
+        description: accepted type 'sedan','SUV','hatchback'
+        required: true
+        type: string
+      - in: formData
+        name: file
+        description: File to be uploaded
+        required: true
+        type: file
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /car/delete:
+    delete:
+      tags:
+      - car
+      operationId: CarController.remove car
+      parameters:
+      - in: body
+        name: body
+        description: delete car
+        required: true
+        schema:
+          $ref: '#/definitions/models.GetcarRequest'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /car/search:
+    post:
+      tags:
+      - car
+      operationId: CarController.search car
+      parameters:
+      - in: body
+        name: body
+        description: search car
+        required: true
+        schema:
+          $ref: '#/definitions/models.SearchRequest'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /car/update:
+    put:
+      tags:
+      - car
+      operationId: CarController.update car
+      parameters:
+      - in: formData
+        name: car_id
+        description: Car name
+        required: true
+        type: string
+      - in: formData
+        name: car_name
+        description: Car name
+        type: string
+      - in: formData
+        name: modified_by
+        description: modified by
+        type: string
+      - in: formData
+        name: model
+        description: Car Model
+        type: string
+      - in: formData
+        name: type
+        description: accepted type 'sedan','SUV','hatchback'
+        type: string
+      - in: formData
+        name: file
+        description: File to be uploaded
+        type: file
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /home/:
+    post:
+      tags:
+      - home
+      operationId: HomeSettingController.get home settingd
+      parameters:
+      - in: body
+        name: body
+        description: Get home settings
+        required: true
+        schema:
+          $ref: '#/definitions/models.GetHomeSettingRequest'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /home/create:
+    post:
+      tags:
+      - home
+      operationId: HomeSettingController.insert home settingd
+      parameters:
+      - in: formData
+        name: section
+        description: section
+        required: true
+        type: string
+      - in: formData
+        name: type
+        description: types are only :-'Banner url','Logo url','Title','Description'
+        required: true
+        type: string
+      - in: formData
+        name: value
+        description: insert when type is Title or description
+        type: string
+      - in: formData
+        name: file
+        description: File to be uploaded
+        type: file
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /home/update:
+    put:
+      tags:
+      - home
+      operationId: HomeSettingController.update home settingd
+      parameters:
+      - in: formData
+        name: home_seting_id
+        description: section
+        required: true
+        type: string
+      - in: formData
+        name: section
+        description: section
+        type: string
+      - in: formData
+        name: type
+        description: types are only :-'Banner url','Logo url','Title','Description'
+        type: string
+      - in: formData
+        name: value
+        description: insert when type is Title or description
+        type: string
+      - in: formData
+        name: file
+        description: File to be uploaded
+        type: file
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /home/userwise:
+    post:
+      tags:
+      - home
+      description: |-
+        users homesettion
+        <br>
+      operationId: HomeSettingController.userwise settins
+      parameters:
+      - in: formData
+        name: user_id
+        description: enter user id to search
+        required: true
+        type: string
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            $ref: '#/definitions/object'
+        "403":
+          description: ""
+  /user/login:
+    post:
+      tags:
+      - user
+      operationId: UserController.login User
+      parameters:
+      - in: body
+        name: body
+        description: login User
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserLoginRequest'
+      responses:
+        "201":
+          description: ""
+          schema:
+            $ref: '#/definitions/object'
+        "403":
+          description: ""
+  /user/logout:
+    get:
+      tags:
+      - user
+      description: |-
+        logout
+        <br>
+      operationId: UserController.logout user
+      responses:
+        "403":
+          description: ""
+  /user/modulecheck:
+    get:
+      tags:
+      - user
+      description: |-
+        sesseions and all module to be checked in this
+        <br>
+      operationId: UserController.check modules
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/object'
+        "403":
+          description: ""
   /user/register:
     post:
       tags:
@@ -31,7 +377,127 @@ paths:
             $ref: '#/definitions/models.Users'
         "403":
           description: ""
-  /user/users:
+  /user/secure/forgot_pass:
+    post:
+      tags:
+      - user
+      operationId: UserController.forgot password
+      parameters:
+      - in: body
+        name: body
+        description: forgot password this is send otp on mobile and email
+        required: true
+        schema:
+          $ref: '#/definitions/models.SendOtpData'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /user/secure/reset_pass:
+    post:
+      tags:
+      - user
+      operationId: UserController.Reset password
+      parameters:
+      - in: body
+        name: body
+        description: reset password
+        required: true
+        schema:
+          $ref: '#/definitions/models.ResetUserPassword'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Users'
+        "403":
+          description: ""
+  /user/secure/reset_pass_otp:
+    post:
+      tags:
+      - user
+      operationId: UserController.verify otp
+      parameters:
+      - in: body
+        name: body
+        description: otp verification for forgot password
+        required: true
+        schema:
+          $ref: '#/definitions/models.ResetUserPasswordOtp'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /user/secure/search:
+    post:
+      tags:
+      - user
+      operationId: UserController.Search User
+      parameters:
+      - in: body
+        name: body
+        description: otp verification for email
+        required: true
+        schema:
+          $ref: '#/definitions/models.SearchRequest'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /user/secure/update:
+    put:
+      tags:
+      - user
+      operationId: UserController.update User
+      parameters:
+      - in: body
+        name: body
+        description: update New User
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateUserRequest'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Users'
+        "403":
+          description: ""
+  /user/secure/users:
     get:
       tags:
       - user
@@ -40,31 +506,6 @@ paths:
         <br>
       operationId: UserController.Get All
       parameters:
-      - in: query
-        name: query
-        description: Filter. e.g. col1:v1,col2:v2 ...
-        type: string
-      - in: query
-        name: fields
-        description: Fields returned. e.g. col1,col2 ...
-        type: string
-      - in: query
-        name: sortby
-        description: Sorted-by fields. e.g. col1,col2 ...
-        type: string
-      - in: query
-        name: order
-        description: Order corresponding to each sortby field, if single value, apply
-          to all sortby fields. e.g. desc,asc ...
-        type: string
-      - in: query
-        name: limit
-        description: Limit the size of result set. Must be an integer
-        type: string
-      - in: query
-        name: offset
-        description: Start position of result set. Must be an integer
-        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -77,7 +518,87 @@ paths:
             $ref: '#/definitions/models.Users'
         "403":
           description: ""
+  /user/secure/verified_user:
+    get:
+      tags:
+      - user
+      operationId: UserController.verifid users
+      parameters:
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /user/secure/verify_email:
+    post:
+      tags:
+      - user
+      operationId: UserController.verify email
+      parameters:
+      - in: body
+        name: body
+        description: verify email
+        required: true
+        schema:
+          $ref: '#/definitions/models.SendOtpData'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /user/secure/verify_email_otp:
+    post:
+      tags:
+      - user
+      operationId: UserController.verify otp for email
+      parameters:
+      - in: body
+        name: body
+        description: otp verification for email
+        required: true
+        schema:
+          $ref: '#/definitions/models.VerifyEmailOTPRequest'
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
 definitions:
+  models.GetHomeSettingRequest:
+    title: GetHomeSettingRequest
+    type: object
+    properties:
+      home_seting_id:
+        type: integer
+        format: int32
+  models.GetcarRequest:
+    title: GetcarRequest
+    type: object
+    properties:
+      car_id:
+        type: integer
+        format: int32
   models.NewUserRequest:
     title: NewUserRequest
     type: object
@@ -99,6 +620,69 @@ definitions:
       phone_number:
         type: string
       role:
+        type: string
+  models.ResetUserPassword:
+    title: ResetUserPassword
+    type: object
+    properties:
+      confirm_password:
+        type: string
+      current_password:
+        type: string
+      new_password:
+        type: string
+  models.ResetUserPasswordOtp:
+    title: ResetUserPasswordOtp
+    type: object
+    properties:
+      email:
+        type: string
+      new_password:
+        type: string
+      otp:
+        type: string
+  models.SearchRequest:
+    title: SearchRequest
+    type: object
+    properties:
+      search:
+        type: string
+  models.SendOtpData:
+    title: SendOtpData
+    type: object
+    properties:
+      username:
+        type: string
+  models.UpdateUserRequest:
+    title: UpdateUserRequest
+    type: object
+    properties:
+      age:
+        type: integer
+        format: int64
+      country_id:
+        type: integer
+        format: int64
+      email:
+        type: string
+      first_name:
+        type: string
+      last_name:
+        type: string
+      phone_number:
+        type: string
+      role:
+        type: string
+      user_id:
+        type: integer
+        format: int32
+  models.UserLoginRequest:
+    title: UserLoginRequest
+    type: object
+    properties:
+      password:
+        type: string
+      username:
         type: string
   models.Users:
     title: Users
@@ -138,3 +722,14 @@ definitions:
       user_id:
         type: integer
         format: int32
+  models.VerifyEmailOTPRequest:
+    title: VerifyEmailOTPRequest
+    type: object
+    properties:
+      otp:
+        type: string
+      username:
+        type: string
+  object:
+    title: object
+    type: object

@@ -2,8 +2,11 @@ package test
 
 import (
 	"CarCrudv2/models"
+	"fmt"
+	"reflect"
 	"testing"
 
+	"github.com/beego/beego/v2/client/httplib"
 	_ "github.com/lib/pq" // PostgreSQL driver
 )
 
@@ -111,9 +114,19 @@ func TestUserModels(t *testing.T) {
 }
 
 func TestGetcolumn(t *testing.T) {
-	err := models.SynchronizeModelWithDB("home_setting")
+	yourStructType := reflect.TypeOf(models.HomeSetting{})
+	err := models.SynchronizeModelWithDB("home_setting", yourStructType)
 	// datas, _ := json.Marshal(data)
 	if err != nil {
 		t.Errorf(err.Error())
 	}
+}
+
+func TestDemo(t *testing.T) {
+	req := httplib.Get("https://dummy.restapiexample.com/api/v1/employees")
+	str, err := req.String()
+	if err != nil {
+		t.Fatal(err)
+	}
+	fmt.Println(str)
 }

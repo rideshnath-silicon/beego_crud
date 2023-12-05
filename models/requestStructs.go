@@ -2,6 +2,7 @@ package models
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
 	"log"
 	"reflect"
@@ -43,10 +44,14 @@ const (
 	SUV       CarType = "SUV"
 )
 
+type FileUploadModel struct {
+	File *[]byte `form:"file" required:"true" description:"File content"`
+}
+
 type Car struct {
 	Id          uint      `json:"car_id" orm:"pk;auto;column(id)"`
 	CarName     string    `orm:"column(car_name)"`
-	CarImage    string    `orm:"null;column(car_image)"`
+	CarImage    string    `orm:"null;column(car_image)" form:"file" json:"file"`
 	ModifiedBy  string    `orm:"column(modified_by)"`
 	Model       string    `orm:"column(model)"`
 	Type        CarType   `orm:"column(car_type);type(enum)"`
@@ -112,7 +117,7 @@ type UserDetailsRequest struct {
 	LastName  string `json:"last_name" `
 	Email     string `json:"email"`
 	Age       int    `json:"age"`
-	Country   int    `json:"country_id"`
+	Country   string `json:"country"`
 }
 
 type SendOtpData struct {
@@ -203,7 +208,7 @@ type UserWiseHomeRequest struct {
 	LastName  string `json:"last_name" `
 }
 
-func SynchronizeModelWithDB(table_name string) error {
+func SynchronizeModelWithDB(table_name string, modelType reflect.Type) error {
 	// Get a database connection
 	db, err := sql.Open("postgres", "user=postgres password=root dbname=mydb sslmode=disable")
 	if err != nil {
@@ -230,10 +235,14 @@ func SynchronizeModelWithDB(table_name string) error {
 		dbColumns[columnName] = dataType
 	}
 
+	if modelType.Kind() != reflect.Struct {
+		return errors.New("tableModelType must be a struct type")
+	}
+
 	// Compare with the Beego model
 	modelColumns := make(map[string]string)
-	model := new(HomeSetting)
-	modelType := reflect.TypeOf(model).Elem()
+	// model := new(table_modle)
+	// modelType := reflect.TypeOf(model).Elem()
 
 	for i := 0; i < modelType.NumField(); i++ {
 		field := modelType.Field(i)

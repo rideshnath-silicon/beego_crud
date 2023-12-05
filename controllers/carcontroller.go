@@ -15,6 +15,13 @@ type CarController struct {
 	beego.Controller
 }
 
+// GetAllCars ...
+// @Title get cars
+// @Desciption Get all car
+// @Param   Authorization   header  string  true  "Bearer YourAccessToken"
+// @Success 201 {object} string
+// @Failure 403
+// @router /cars [get]
 func (c *CarController) GetAllCars() {
 	Data, err := models.GetAllCars()
 	if err != nil {
@@ -23,6 +30,14 @@ func (c *CarController) GetAllCars() {
 	helpers.ApiSuccess(c.Ctx, Data, http.StatusOK, 1000)
 }
 
+// GetSingleCar ...
+// @Title get car
+// @Desciption Get all car
+// @Param body body models.GetcarRequest true "get perticuler car"
+// @Param   Authorization   header  string  true  "Bearer YourAccessToken"
+// @Success 201 {object} string
+// @Failure 403
+// @router / [post]
 func (c *CarController) GetSingleCar() {
 	var bodyData models.GetcarRequest
 	err := helpers.RequestBody(c.Ctx, &bodyData)
@@ -36,6 +51,14 @@ func (c *CarController) GetSingleCar() {
 	helpers.ApiSuccess(c.Ctx, Data, http.StatusOK, 1000)
 }
 
+// GetCarUsingSearch ...
+// @Title search car
+// @Desciption search car
+// @Param body body models.SearchRequest true "search car"
+// @Param   Authorization   header  string  true  "Bearer YourAccessToken"
+// @Success 201 {object} string
+// @Failure 403
+// @router /search [post]
 func (c *CarController) GetCarUsingSearch() {
 	var bodyData models.SearchRequest
 	err := helpers.RequestBody(c.Ctx, &bodyData)
@@ -56,6 +79,19 @@ func (c *CarController) GetCarUsingSearch() {
 	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1000)
 }
 
+// AddNewCar ...
+// @Title new car
+// @Desciption insert car
+// @swagger:parameters upload
+// @Param car_name formData string true "Car name"
+// @Param modified_by formData string true "modified by"
+// @Param model formData string true "Car Model"
+// @Param type formData string true "accepted type 'sedan','SUV','hatchback'"
+// @Param file formData file true "File to be uploaded"
+// @Param   Authorization   header  string  true  "Bearer YourAccessToken"
+// @Success 201 {object} string
+// @Failure 403
+// @router /create [post]
 func (c *CarController) AddNewCar() {
 	var cars models.GetNewCarRequest
 	if err := c.ParseForm(&cars); err != nil {
@@ -65,7 +101,7 @@ func (c *CarController) AddNewCar() {
 	json.Unmarshal(c.Ctx.Input.RequestBody, &cars)
 	_, fileheader, err := c.GetFile("file")
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, "File Getting Error", http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, err.Error(), http.StatusBadRequest, 1001)
 		return
 	}
 	var carType string = string(cars.Type)
@@ -99,6 +135,19 @@ func NewCarType(input string) (models.CarType, error) {
 	}
 }
 
+// UpdateCar ...
+// @Title update car
+// @Desciption update car
+// @Param car_id formData string true "Car name"
+// @Param car_name formData string false "Car name"
+// @Param modified_by formData string false "modified by"
+// @Param model formData string false "Car Model"
+// @Param type formData string false "accepted type 'sedan','SUV','hatchback'"
+// @Param file formData file false "File to be uploaded"
+// @Param   Authorization   header  string  true  "Bearer YourAccessToken"
+// @Success 201 {object} string
+// @Failure 403
+// @router /update [PUT]
 func (c *CarController) UpdateCar() {
 	var cars models.UpdateCarRequest
 	if err := c.ParseForm(&cars); err != nil {
@@ -166,6 +215,15 @@ func (c *CarController) UpdateCar() {
 	}
 	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1003)
 }
+
+// DeleteCar ...
+// @Title remove car
+// @Desciption delete car
+// @Param body body models.GetcarRequest true "delete car"
+// @Param   Authorization   header  string  true  "Bearer YourAccessToken"
+// @Success 201 {object} string
+// @Failure 403
+// @router /delete [delete]
 func (c *CarController) DeleteCar() {
 	var car models.GetcarRequest
 	err := helpers.RequestBody(c.Ctx, &car)
