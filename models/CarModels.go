@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"time"
+
 	"github.com/beego/beego/v2/client/orm"
 )
 
@@ -12,10 +13,10 @@ func GetAllCars() (interface{}, error) {
 	var cars []Car
 	num, err := o.QueryTable(new(Car)).All(&cars)
 	if err != nil {
-		return nil, err
+		return nil, errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
-		return nil, errors.New("error :- Data Not Found")
+		return nil, errors.New("DATABASE_ERROR")
 	}
 	return cars, nil
 }
@@ -25,10 +26,10 @@ func GetSingleCar(id uint) (Car, error) {
 	var car Car
 	num, err := o.QueryTable(new(Car)).Filter("id", id).All(&car)
 	if err != nil {
-		return car, err
+		return car, errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
-		return car, errors.New("error :- please enter valid car id")
+		return car,errors.New("DATABASE_ERROR")
 	}
 	return car, nil
 }
@@ -38,15 +39,15 @@ func GetCarUsingSearch(search string) ([]Car, error) {
 	var car []Car
 	num, err := o.QueryTable(new(Car)).SetCond(orm.NewCondition().Or("car_name__icontains", search).Or("model__icontains", search).Or("modified_by__icontains", search).Or("car_type__icontains", search)).All(&car)
 	if err != nil {
-		return nil, err
+		return nil, errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
-		return nil, errors.New("error :- No car found")
+		return nil,errors.New("NOT_FOUND")
 	}
 	return car, nil
 }
 
-func InsertNewCar(data GetNewCarRequest) (interface{}, error) {
+func InsertNewCar(data GetNewCarRequest) (Car, error) {
 	o := orm.NewOrm()
 	var car = Car{
 		CarName:     data.CarName,
@@ -58,7 +59,7 @@ func InsertNewCar(data GetNewCarRequest) (interface{}, error) {
 	}
 	_, err := o.Insert(&car)
 	if err != nil {
-		return nil, err
+		return car, errors.New("DATABASE_ERROR")
 	}
 	return car, nil
 }
@@ -72,29 +73,29 @@ func UpdateCar(data UpdateCarRequest) (interface{}, error) {
 		Model:      data.Model,
 		Type:       data.Type,
 		CarImage:   data.CarImage,
-		UpdateAt:   time.Now(),
+		UpdateDate: time.Now(),
 	}
 	fmt.Println(data)
 
 	num, err := o.Update(&car, "id", "car_name", "modified_by", "model", "car_type", "car_image", "updated_at")
 	if err != nil {
-		return num, err
+		return num, errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
-		return nil,errors.New("error :- Please enter valid car id")
+		return nil, errors.New("NOT_FOUND")
 	}
 	return car, nil
 }
-
+		
 func DeleteCar(id uint) (interface{}, error) {
 	o := orm.NewOrm()
 	var car = Car{Id: id}
 	num, err := o.Delete(&car)
 	if err != nil {
-		return nil, err
+		return nil, errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
-		return nil,errors.New("error :- Please enter valid car id")
+		return nil,errors.New("NOT_FOUND")
 	}
 	return car, nil
 }

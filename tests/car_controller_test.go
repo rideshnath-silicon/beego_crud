@@ -124,7 +124,6 @@ func TestRemoveCar(t *testing.T) {
 	endPoint := "/v1/car/delete"
 	validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNDY4ODl9.t-cNDRqPHygAu1yGHjOtpJWvhj1qaBk0WpTGHxM9Vm4"
 	tokan := fmt.Sprintf("Bearer %s", validToken)
-
 	var jsonStr = []byte(`{"car_id":1}`)
 	r, err := http.NewRequest("POST", endPoint, bytes.NewBuffer(jsonStr))
 	if err != nil {

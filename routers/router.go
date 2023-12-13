@@ -22,9 +22,13 @@ func init() {
 			beego.NSRouter("/login", &controllers.UserController{}, "post:Login"),
 			beego.NSRouter("/logout", &controllers.UserController{}, "get:Logout"),
 			beego.NSRouter("/modulecheck", &controllers.UserController{}, "get:Checkmodul"),
+			beego.NSRouter("/export/xlxs", &controllers.UserController{}, "get:FetchAndExportToXLS"),
+			beego.NSRouter("/export/pdf", &controllers.UserController{}, "get:FetchAndExportToPDF"),
+			beego.NSRouter("/import/xlsx", &controllers.UserController{}, "post:ImportData"),
+			beego.NSRouter("/newMessage", &controllers.UserController{}, "post:CreateMessageCode"),
 			beego.NSNamespace("/secure",
 				beego.NSBefore(middleware.JWTMiddleware),
-				beego.NSRouter("/forgot_pass", &controllers.UserController{}, "post:SendOtp"),
+				beego.NSRouter("/forgot_pass", &controllers.UserController{}, "post:ForgotPassword"),
 				beego.NSRouter("/reset_pass_otp", &controllers.UserController{}, "post:VerifyOtpResetpassword"),
 				beego.NSRouter("/users", &controllers.UserController{}, "Get:GetAllUser"),
 				beego.NSRouter("/verify_email", &controllers.UserController{}, "post:VerifyUserEmail"),
@@ -34,6 +38,8 @@ func init() {
 				beego.NSRouter("/contries", &controllers.UserController{}, "get:GetCountryWiseCountUser"),
 				beego.NSRouter("/verified_user", &controllers.UserController{}, "get:GetVerifiedUsers"),
 				beego.NSRouter("/search", &controllers.UserController{}, "post:SearchUser"),
+				beego.NSRouter("/delete/:id", &controllers.UserController{}, "delete:DeleteUser"),
+				beego.NSRouter("/inup", &controllers.UserController{}, "post:InsertUpdate"),
 			),
 		),
 		beego.NSNamespace("/car",
@@ -53,9 +59,9 @@ func init() {
 			beego.NSRouter("/userwise", &controllers.HomeSettingController{}, "post:GetUserWiseHome"),
 			beego.NSRouter("/create", &controllers.HomeSettingController{}, "post:InsertNewHomeSetting"),
 			beego.NSRouter("/update", &controllers.HomeSettingController{}, "put:UpdateHomeSeting"),
+			beego.NSRouter("/delete/:id", &controllers.HomeSettingController{}, "delete:DeleteHomeSetting"),
 		),
 	)
-
 	beego.AddNamespace(ns)
 
 	ns1 := beego.NewNamespace("/v2",

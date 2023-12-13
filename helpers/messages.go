@@ -4,15 +4,15 @@ func Messagess(MessageCode int) string {
 	var messages string
 	switch MessageCode {
 	case 1000:
-		messages = "Data found successfully"
+		messages = "DATA_FOUND"
 	case 1001:
-		messages = "Data not found "
+		messages = "NOT_FOUND"
 	case 1002:
-		messages = "Data Inserted successfully"
+		messages = "Success"
 	case 1003:
-		messages = "Data Updated Successfully"
+		messages = "DATA_UPDATED"
 	case 1004:
-		messages = "Data Delere Successfully"
+		messages = "DATA_DELETE"
 	case 2000:
 		messages = "ID not found"
 	case 2001:
@@ -20,11 +20,11 @@ func Messagess(MessageCode int) string {
 	case 2002:
 		messages = "Error in create"
 	case 5000:
-		messages = "Accont is verified"
+		messages = "LOGIN"
 	case 5001:
-		messages = "Unauthorized User"
+		messages = "UNAUTHORIZED"
 	case 5002:
-		messages = "Tokan Not Found"
+		messages = "TOKAN_NOT_FOUND"
 	default:
 		messages = "okk"
 	}

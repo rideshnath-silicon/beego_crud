@@ -12,16 +12,16 @@ import (
 
 func TestUserModels(t *testing.T) {
 	t.Run("Register new user", func(t *testing.T) {
-		// TruncateTable("users")
+		TruncateTable("users")
 		var user = models.NewUserRequest{
-			FirstName:   "Devendra",
-			LastName:    "pohekar",
+			FirstName:   "Ridesh",
+			LastName:    "Nath",
 			Email:       "rideshnath.siliconithub@gmail.com",
 			PhoneNumber: "1234567890",
 			Role:        "developer",
 			Country:     1,
 			Age:         24,
-			Password:    "123456",
+			Password:    "123456",							
 		}
 		data, err := models.InsertNewUser(user)
 		if err != nil {

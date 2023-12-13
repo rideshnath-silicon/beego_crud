@@ -377,3 +377,863 @@
 2023/12/05 19:10:55.538  [E] [main.go:51]  Error message
 2023/12/05 19:10:55.538  [C] [main.go:52]  Critical message
 2023/12/05 19:10:55.542  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 10:17:28.600  [D] [main.go:48]  Debug message
+2023/12/06 10:17:28.600  [I] [main.go:49]  Info message
+2023/12/06 10:17:28.600  [W] [main.go:50]  Warning message
+2023/12/06 10:17:28.600  [E] [main.go:51]  Error message
+2023/12/06 10:17:28.600  [C] [main.go:52]  Critical message
+2023/12/06 10:17:28.604  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 10:17:52.818  [D] [router.go:1305]  |            ::1|[90;47m 302 [0m|     34.866µs|   match|[97;44m GET     [0m /swagger
+2023/12/06 10:17:52.822  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    603.505µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 10:17:52.835  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.540684ms|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 10:17:52.842  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   8.434943ms|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 10:17:52.845  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   5.150067ms|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 10:17:53.001  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    201.986µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 10:17:55.973  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     33.685µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 10:17:55.981  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    204.692µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 10:17:55.984  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    712.025µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 10:17:55.986  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    3.18399ms|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 10:17:56.053  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     86.877µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 10:17:56.117  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    449.664µs|   match|[97;44m GET     [0m /swagger/favicon-32x32.png
+2023/12/06 10:17:56.656  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     85.399µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 10:17:56.681  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    577.334µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 10:17:56.687  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    715.497µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 10:17:56.688  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.708005ms|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 10:17:56.765  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     88.186µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 10:17:56.767  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     42.689µs|   match|[97;44m GET     [0m /swagger/favicon-32x32.png
+2023/12/06 10:17:57.160  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     83.062µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 10:17:57.188  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.394047ms|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 10:17:57.189  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    641.615µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 10:17:57.189  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.068702ms|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 10:17:57.264  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     87.614µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 10:17:57.279  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     49.251µs|   match|[97;44m GET     [0m /swagger/favicon-32x32.png
+2023/12/06 10:18:04.879  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   7.644764ms|   match|[97;44m GET     [0m /v1/user/export   r:/v1/user/export
+2023/12/06 10:27:59.524  [D] [main.go:48]  Debug message
+2023/12/06 10:27:59.524  [I] [main.go:49]  Info message
+2023/12/06 10:27:59.524  [W] [main.go:50]  Warning message
+2023/12/06 10:27:59.524  [E] [main.go:51]  Error message
+2023/12/06 10:27:59.524  [C] [main.go:52]  Critical message
+2023/12/06 10:27:59.527  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 10:28:09.054  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   3.356565ms|   match|[97;44m GET     [0m /v1/user/export   r:/v1/user/export
+2023/12/06 10:32:00.480  [D] [main.go:48]  Debug message
+2023/12/06 10:32:00.480  [I] [main.go:49]  Info message
+2023/12/06 10:32:00.480  [W] [main.go:50]  Warning message
+2023/12/06 10:32:00.480  [E] [main.go:51]  Error message
+2023/12/06 10:32:00.480  [C] [main.go:52]  Critical message
+2023/12/06 10:32:00.483  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 10:39:30.542  [D] [main.go:48]  Debug message
+2023/12/06 10:39:30.542  [I] [main.go:49]  Info message
+2023/12/06 10:39:30.542  [W] [main.go:50]  Warning message
+2023/12/06 10:39:30.542  [E] [main.go:51]  Error message
+2023/12/06 10:39:30.543  [C] [main.go:52]  Critical message
+2023/12/06 10:39:30.546  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 10:39:34.749  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    836.427µs|   match|[97;44m GET     [0m /v1/user/export   r:/v1/user/export
+2023/12/06 10:40:47.656  [D] [main.go:48]  Debug message
+2023/12/06 10:40:47.656  [I] [main.go:49]  Info message
+2023/12/06 10:40:47.656  [W] [main.go:50]  Warning message
+2023/12/06 10:40:47.656  [E] [main.go:51]  Error message
+2023/12/06 10:40:47.656  [C] [main.go:52]  Critical message
+2023/12/06 10:40:47.660  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 10:40:50.564  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    721.471µs|   match|[97;44m GET     [0m /v1/user/export   r:/v1/user/export
+2023/12/06 10:42:07.092  [D] [main.go:48]  Debug message
+2023/12/06 10:42:07.092  [I] [main.go:49]  Info message
+2023/12/06 10:42:07.092  [W] [main.go:50]  Warning message
+2023/12/06 10:42:07.092  [E] [main.go:51]  Error message
+2023/12/06 10:42:07.092  [C] [main.go:52]  Critical message
+2023/12/06 10:42:07.096  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 10:42:10.406  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   3.963553ms|   match|[97;44m GET     [0m /v1/user/export   r:/v1/user/export
+2023/12/06 10:45:38.104  [D] [main.go:48]  Debug message
+2023/12/06 10:45:38.105  [I] [main.go:49]  Info message
+2023/12/06 10:45:38.105  [W] [main.go:50]  Warning message
+2023/12/06 10:45:38.105  [E] [main.go:51]  Error message
+2023/12/06 10:45:38.105  [C] [main.go:52]  Critical message
+2023/12/06 10:45:38.108  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 10:45:45.434  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   3.458299ms|   match|[97;44m GET     [0m /v1/user/export   r:/v1/user/export
+2023/12/06 10:53:49.381  [D] [main.go:48]  Debug message
+2023/12/06 10:53:49.382  [I] [main.go:49]  Info message
+2023/12/06 10:53:49.382  [W] [main.go:50]  Warning message
+2023/12/06 10:53:49.382  [E] [main.go:51]  Error message
+2023/12/06 10:53:49.382  [C] [main.go:52]  Critical message
+2023/12/06 10:53:49.385  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 10:53:56.210  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    106.819µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 10:53:56.219  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    158.159µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 10:53:56.221  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    294.062µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 10:53:56.221  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     788.06µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 10:53:56.360  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    207.351µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 10:54:05.158  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.450145ms|   match|[97;44m GET     [0m /v1/user/export/pdf   r:/v1/user/export/pdf
+2023/12/06 11:01:13.636  [D] [main.go:48]  Debug message
+2023/12/06 11:01:13.636  [I] [main.go:49]  Info message
+2023/12/06 11:01:13.636  [W] [main.go:50]  Warning message
+2023/12/06 11:01:13.636  [E] [main.go:51]  Error message
+2023/12/06 11:01:13.636  [C] [main.go:52]  Critical message
+2023/12/06 11:01:13.639  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:01:17.574  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.657615ms|   match|[97;44m GET     [0m /v1/user/export/pdf   r:/v1/user/export/pdf
+2023/12/06 11:02:05.199  [D] [main.go:48]  Debug message
+2023/12/06 11:02:05.199  [I] [main.go:49]  Info message
+2023/12/06 11:02:05.199  [W] [main.go:50]  Warning message
+2023/12/06 11:02:05.199  [E] [main.go:51]  Error message
+2023/12/06 11:02:05.199  [C] [main.go:52]  Critical message
+2023/12/06 11:02:05.203  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:02:14.593  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.598081ms|   match|[97;44m GET     [0m /v1/user/export/pdf   r:/v1/user/export/pdf
+2023/12/06 11:04:45.703  [D] [main.go:48]  Debug message
+2023/12/06 11:04:45.703  [I] [main.go:49]  Info message
+2023/12/06 11:04:45.703  [W] [main.go:50]  Warning message
+2023/12/06 11:04:45.703  [E] [main.go:51]  Error message
+2023/12/06 11:04:45.703  [C] [main.go:52]  Critical message
+2023/12/06 11:04:45.706  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:04:54.471  [D] [main.go:48]  Debug message
+2023/12/06 11:04:54.471  [I] [main.go:49]  Info message
+2023/12/06 11:04:54.471  [W] [main.go:50]  Warning message
+2023/12/06 11:04:54.471  [E] [main.go:51]  Error message
+2023/12/06 11:04:54.471  [C] [main.go:52]  Critical message
+2023/12/06 11:04:54.474  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:05:03.312  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.567062ms|   match|[97;44m GET     [0m /v1/user/export/xlxs   r:/v1/user/export/xlxs
+2023/12/06 11:10:42.955  [D] [main.go:48]  Debug message
+2023/12/06 11:10:42.955  [I] [main.go:49]  Info message
+2023/12/06 11:10:42.955  [W] [main.go:50]  Warning message
+2023/12/06 11:10:42.955  [E] [main.go:51]  Error message
+2023/12/06 11:10:42.955  [C] [main.go:52]  Critical message
+2023/12/06 11:10:42.959  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:10:48.444  [M] [log.go:268]  [HTTP] http: superfluous response.WriteHeader call from github.com/beego/beego/v2/server/web/context.(*Response).WriteHeader (context.go:364)
+2023/12/06 11:10:48.444  [D] [router.go:1305]  |            ::1|[90;47m 301 [0m|   3.517081ms|   match|[97;44m GET     [0m /v1/user/export/xlxs   r:/v1/user/export/xlxs
+2023/12/06 11:11:17.455  [D] [main.go:48]  Debug message
+2023/12/06 11:11:17.455  [I] [main.go:49]  Info message
+2023/12/06 11:11:17.455  [W] [main.go:50]  Warning message
+2023/12/06 11:11:17.455  [E] [main.go:51]  Error message
+2023/12/06 11:11:17.455  [C] [main.go:52]  Critical message
+2023/12/06 11:11:17.459  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:15:00.602  [D] [main.go:48]  Debug message
+2023/12/06 11:15:00.602  [I] [main.go:49]  Info message
+2023/12/06 11:15:00.602  [W] [main.go:50]  Warning message
+2023/12/06 11:15:00.602  [E] [main.go:51]  Error message
+2023/12/06 11:15:00.602  [C] [main.go:52]  Critical message
+2023/12/06 11:15:00.606  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:15:08.682  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    1.20111ms|   match|[97;44m GET     [0m /v1/user/export/pdf   r:/v1/user/export/pdf
+2023/12/06 11:16:05.459  [D] [main.go:48]  Debug message
+2023/12/06 11:16:05.459  [I] [main.go:49]  Info message
+2023/12/06 11:16:05.459  [W] [main.go:50]  Warning message
+2023/12/06 11:16:05.459  [E] [main.go:51]  Error message
+2023/12/06 11:16:05.459  [C] [main.go:52]  Critical message
+2023/12/06 11:16:05.463  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:16:12.564  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    2.41802ms|   match|[97;44m GET     [0m /v1/user/export/pdf   r:/v1/user/export/pdf
+2023/12/06 11:16:54.450  [D] [main.go:48]  Debug message
+2023/12/06 11:16:54.450  [I] [main.go:49]  Info message
+2023/12/06 11:16:54.450  [W] [main.go:50]  Warning message
+2023/12/06 11:16:54.450  [E] [main.go:51]  Error message
+2023/12/06 11:16:54.450  [C] [main.go:52]  Critical message
+2023/12/06 11:16:54.454  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:17:42.341  [D] [main.go:48]  Debug message
+2023/12/06 11:17:42.341  [I] [main.go:49]  Info message
+2023/12/06 11:17:42.341  [W] [main.go:50]  Warning message
+2023/12/06 11:17:42.341  [E] [main.go:51]  Error message
+2023/12/06 11:17:42.341  [C] [main.go:52]  Critical message
+2023/12/06 11:17:42.344  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:17:49.802  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.562995ms|   match|[97;44m GET     [0m /v1/user/export/pdf   r:/v1/user/export/pdf
+2023/12/06 11:30:58.977  [D] [main.go:48]  Debug message
+2023/12/06 11:30:58.977  [I] [main.go:49]  Info message
+2023/12/06 11:30:58.977  [W] [main.go:50]  Warning message
+2023/12/06 11:30:58.977  [E] [main.go:51]  Error message
+2023/12/06 11:30:58.977  [C] [main.go:52]  Critical message
+2023/12/06 11:30:58.980  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:31:08.514  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.726981ms|   match|[97;44m GET     [0m /v1/user/export/pdf   r:/v1/user/export/pdf
+2023/12/06 11:31:45.483  [D] [main.go:48]  Debug message
+2023/12/06 11:31:45.483  [I] [main.go:49]  Info message
+2023/12/06 11:31:45.483  [W] [main.go:50]  Warning message
+2023/12/06 11:31:45.483  [E] [main.go:51]  Error message
+2023/12/06 11:31:45.483  [C] [main.go:52]  Critical message
+2023/12/06 11:31:45.487  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:58:34.626  [D] [main.go:48]  Debug message
+2023/12/06 11:58:34.626  [I] [main.go:49]  Info message
+2023/12/06 11:58:34.626  [W] [main.go:50]  Warning message
+2023/12/06 11:58:34.626  [E] [main.go:51]  Error message
+2023/12/06 11:58:34.626  [C] [main.go:52]  Critical message
+2023/12/06 11:58:34.630  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 11:58:43.761  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   3.576032ms|   match|[97;44m GET     [0m /v1/user/export/xlxs   r:/v1/user/export/xlxs
+2023/12/06 12:00:35.914  [D] [main.go:48]  Debug message
+2023/12/06 12:00:35.914  [I] [main.go:49]  Info message
+2023/12/06 12:00:35.914  [W] [main.go:50]  Warning message
+2023/12/06 12:00:35.914  [E] [main.go:51]  Error message
+2023/12/06 12:00:35.914  [C] [main.go:52]  Critical message
+2023/12/06 12:00:35.918  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:00:37.228  [D] [main.go:48]  Debug message
+2023/12/06 12:00:37.228  [I] [main.go:49]  Info message
+2023/12/06 12:00:37.228  [W] [main.go:50]  Warning message
+2023/12/06 12:00:37.228  [E] [main.go:51]  Error message
+2023/12/06 12:00:37.228  [C] [main.go:52]  Critical message
+2023/12/06 12:00:37.232  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:00:40.689  [D] [main.go:48]  Debug message
+2023/12/06 12:00:40.689  [I] [main.go:49]  Info message
+2023/12/06 12:00:40.689  [W] [main.go:50]  Warning message
+2023/12/06 12:00:40.690  [E] [main.go:51]  Error message
+2023/12/06 12:00:40.690  [C] [main.go:52]  Critical message
+2023/12/06 12:00:40.693  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:00:42.758  [D] [main.go:48]  Debug message
+2023/12/06 12:00:42.758  [I] [main.go:49]  Info message
+2023/12/06 12:00:42.758  [W] [main.go:50]  Warning message
+2023/12/06 12:00:42.758  [E] [main.go:51]  Error message
+2023/12/06 12:00:42.758  [C] [main.go:52]  Critical message
+2023/12/06 12:00:42.762  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:02:39.125  [D] [main.go:48]  Debug message
+2023/12/06 12:02:39.125  [I] [main.go:49]  Info message
+2023/12/06 12:02:39.125  [W] [main.go:50]  Warning message
+2023/12/06 12:02:39.125  [E] [main.go:51]  Error message
+2023/12/06 12:02:39.125  [C] [main.go:52]  Critical message
+2023/12/06 12:02:39.128  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:02:47.799  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     66.187µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 12:02:47.809  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    167.275µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 12:02:47.810  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    291.904µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 12:02:47.811  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    699.521µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 12:02:47.953  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    201.236µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 12:03:52.214  [D] [main.go:48]  Debug message
+2023/12/06 12:03:52.214  [I] [main.go:49]  Info message
+2023/12/06 12:03:52.214  [W] [main.go:50]  Warning message
+2023/12/06 12:03:52.214  [E] [main.go:51]  Error message
+2023/12/06 12:03:52.214  [C] [main.go:52]  Critical message
+2023/12/06 12:03:52.218  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:04:10.354  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     57.574µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 12:04:10.363  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    151.311µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 12:04:10.365  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    251.554µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 12:04:10.365  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     647.91µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 12:04:10.445  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    273.042µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 12:04:38.292  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   3.282162ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:20.450  [D] [main.go:48]  Debug message
+2023/12/06 12:07:20.450  [I] [main.go:49]  Info message
+2023/12/06 12:07:20.450  [W] [main.go:50]  Warning message
+2023/12/06 12:07:20.450  [E] [main.go:51]  Error message
+2023/12/06 12:07:20.450  [C] [main.go:52]  Critical message
+2023/12/06 12:07:20.454  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:07:30.563  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    2.84634ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:31.663  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.565757ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:32.207  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.574501ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:32.415  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.162783ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:32.734  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    1.50131ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:33.086  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.876267ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:33.513  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.415754ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:33.753  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.612901ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:33.941  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.420773ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:34.119  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.393877ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:07:43.027  [D] [main.go:48]  Debug message
+2023/12/06 12:07:43.027  [I] [main.go:49]  Info message
+2023/12/06 12:07:43.027  [W] [main.go:50]  Warning message
+2023/12/06 12:07:43.027  [E] [main.go:51]  Error message
+2023/12/06 12:07:43.027  [C] [main.go:52]  Critical message
+2023/12/06 12:07:43.030  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:07:45.143  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     57.651µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 12:07:45.153  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    171.701µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 12:07:45.154  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    888.158µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 12:07:45.157  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    242.842µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 12:07:45.287  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    465.577µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 12:07:58.833  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    2.10334ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:09:04.595  [D] [main.go:48]  Debug message
+2023/12/06 12:09:04.595  [I] [main.go:49]  Info message
+2023/12/06 12:09:04.595  [W] [main.go:50]  Warning message
+2023/12/06 12:09:04.595  [E] [main.go:51]  Error message
+2023/12/06 12:09:04.595  [C] [main.go:52]  Critical message
+2023/12/06 12:09:04.599  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:09:07.370  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    2.77755ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:11:14.679  [D] [main.go:48]  Debug message
+2023/12/06 12:11:14.679  [I] [main.go:49]  Info message
+2023/12/06 12:11:14.679  [W] [main.go:50]  Warning message
+2023/12/06 12:11:14.679  [E] [main.go:51]  Error message
+2023/12/06 12:11:14.679  [C] [main.go:52]  Critical message
+2023/12/06 12:11:14.683  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:11:38.895  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     69.265µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 12:11:38.905  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    211.993µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 12:11:38.906  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    598.221µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 12:11:38.908  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    304.066µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 12:11:38.979  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    202.384µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 12:11:47.141  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.617392ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:12:51.774  [D] [main.go:48]  Debug message
+2023/12/06 12:12:51.775  [I] [main.go:49]  Info message
+2023/12/06 12:12:51.775  [W] [main.go:50]  Warning message
+2023/12/06 12:12:51.775  [E] [main.go:51]  Error message
+2023/12/06 12:12:51.775  [C] [main.go:52]  Critical message
+2023/12/06 12:12:51.779  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:12:54.052  [D] [main.go:48]  Debug message
+2023/12/06 12:12:54.052  [I] [main.go:49]  Info message
+2023/12/06 12:12:54.052  [W] [main.go:50]  Warning message
+2023/12/06 12:12:54.052  [E] [main.go:51]  Error message
+2023/12/06 12:12:54.052  [C] [main.go:52]  Critical message
+2023/12/06 12:12:54.055  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:12:55.960  [D] [main.go:48]  Debug message
+2023/12/06 12:12:55.961  [I] [main.go:49]  Info message
+2023/12/06 12:12:55.961  [W] [main.go:50]  Warning message
+2023/12/06 12:12:55.961  [E] [main.go:51]  Error message
+2023/12/06 12:12:55.961  [C] [main.go:52]  Critical message
+2023/12/06 12:12:55.964  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:12:57.378  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.463269ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:15:32.342  [D] [main.go:48]  Debug message
+2023/12/06 12:15:32.342  [I] [main.go:49]  Info message
+2023/12/06 12:15:32.342  [W] [main.go:50]  Warning message
+2023/12/06 12:15:32.342  [E] [main.go:51]  Error message
+2023/12/06 12:15:32.342  [C] [main.go:52]  Critical message
+2023/12/06 12:15:32.345  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:16:16.909  [D] [main.go:48]  Debug message
+2023/12/06 12:16:16.910  [I] [main.go:49]  Info message
+2023/12/06 12:16:16.910  [W] [main.go:50]  Warning message
+2023/12/06 12:16:16.910  [E] [main.go:51]  Error message
+2023/12/06 12:16:16.910  [C] [main.go:52]  Critical message
+2023/12/06 12:16:16.913  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:16:19.550  [D] [main.go:48]  Debug message
+2023/12/06 12:16:19.550  [I] [main.go:49]  Info message
+2023/12/06 12:16:19.550  [W] [main.go:50]  Warning message
+2023/12/06 12:16:19.550  [E] [main.go:51]  Error message
+2023/12/06 12:16:19.550  [C] [main.go:52]  Critical message
+2023/12/06 12:16:19.554  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:16:25.268  [D] [main.go:48]  Debug message
+2023/12/06 12:16:25.268  [I] [main.go:49]  Info message
+2023/12/06 12:16:25.268  [W] [main.go:50]  Warning message
+2023/12/06 12:16:25.268  [E] [main.go:51]  Error message
+2023/12/06 12:16:25.268  [C] [main.go:52]  Critical message
+2023/12/06 12:16:25.272  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:16:28.450  [D] [main.go:48]  Debug message
+2023/12/06 12:16:28.450  [I] [main.go:49]  Info message
+2023/12/06 12:16:28.450  [W] [main.go:50]  Warning message
+2023/12/06 12:16:28.450  [E] [main.go:51]  Error message
+2023/12/06 12:16:28.450  [C] [main.go:52]  Critical message
+2023/12/06 12:16:28.454  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:16:30.271  [D] [main.go:48]  Debug message
+2023/12/06 12:16:30.271  [I] [main.go:49]  Info message
+2023/12/06 12:16:30.271  [W] [main.go:50]  Warning message
+2023/12/06 12:16:30.271  [E] [main.go:51]  Error message
+2023/12/06 12:16:30.271  [C] [main.go:52]  Critical message
+2023/12/06 12:16:30.274  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:16:50.316  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m| 882.241757ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:19:30.679  [D] [main.go:48]  Debug message
+2023/12/06 12:19:30.679  [I] [main.go:49]  Info message
+2023/12/06 12:19:30.679  [W] [main.go:50]  Warning message
+2023/12/06 12:19:30.679  [E] [main.go:51]  Error message
+2023/12/06 12:19:30.679  [C] [main.go:52]  Critical message
+2023/12/06 12:19:30.682  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:19:42.617  [D] [main.go:48]  Debug message
+2023/12/06 12:19:42.618  [I] [main.go:49]  Info message
+2023/12/06 12:19:42.618  [W] [main.go:50]  Warning message
+2023/12/06 12:19:42.618  [E] [main.go:51]  Error message
+2023/12/06 12:19:42.618  [C] [main.go:52]  Critical message
+2023/12/06 12:19:42.622  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:19:45.447  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     67.018µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 12:19:45.456  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     145.77µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 12:19:45.458  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    272.634µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 12:19:45.458  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    622.605µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 12:19:45.535  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    214.628µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 12:20:03.728  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m| 1.735853727s|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:37:57.530  [D] [main.go:48]  Debug message
+2023/12/06 12:37:57.530  [I] [main.go:49]  Info message
+2023/12/06 12:37:57.530  [W] [main.go:50]  Warning message
+2023/12/06 12:37:57.530  [E] [main.go:51]  Error message
+2023/12/06 12:37:57.530  [C] [main.go:52]  Critical message
+2023/12/06 12:37:57.533  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:38:07.092  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   3.287857ms|   match|[97;44m GET     [0m /v1/user/export/xlxs   r:/v1/user/export/xlxs
+2023/12/06 12:43:57.386  [D] [main.go:48]  Debug message
+2023/12/06 12:43:57.386  [I] [main.go:49]  Info message
+2023/12/06 12:43:57.386  [W] [main.go:50]  Warning message
+2023/12/06 12:43:57.387  [E] [main.go:51]  Error message
+2023/12/06 12:43:57.387  [C] [main.go:52]  Critical message
+2023/12/06 12:43:57.390  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:44:04.061  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     57.612µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 12:44:04.073  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    141.427µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 12:44:04.075  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    237.892µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 12:44:04.075  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    603.457µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 12:44:04.213  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    247.051µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 12:44:14.982  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.414028ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:45:34.223  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.503993ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:48:04.712  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   2.798905ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:48:47.993  [D] [main.go:48]  Debug message
+2023/12/06 12:48:47.993  [I] [main.go:49]  Info message
+2023/12/06 12:48:47.993  [W] [main.go:50]  Warning message
+2023/12/06 12:48:47.993  [E] [main.go:51]  Error message
+2023/12/06 12:48:47.993  [C] [main.go:52]  Critical message
+2023/12/06 12:48:47.997  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:48:50.431  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     70.613µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 12:48:50.441  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    193.937µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 12:48:50.444  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    692.131µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 12:48:50.445  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    317.376µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 12:48:50.527  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    472.264µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 12:49:00.478  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   4.309702ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 12:50:39.333  [D] [main.go:48]  Debug message
+2023/12/06 12:50:39.333  [I] [main.go:49]  Info message
+2023/12/06 12:50:39.333  [W] [main.go:50]  Warning message
+2023/12/06 12:50:39.333  [E] [main.go:51]  Error message
+2023/12/06 12:50:39.333  [C] [main.go:52]  Critical message
+2023/12/06 12:50:39.337  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 12:50:50.926  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   4.704433ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 13:00:30.318  [D] [main.go:48]  Debug message
+2023/12/06 13:00:30.318  [I] [main.go:49]  Info message
+2023/12/06 13:00:30.318  [W] [main.go:50]  Warning message
+2023/12/06 13:00:30.318  [E] [main.go:51]  Error message
+2023/12/06 13:00:30.319  [C] [main.go:52]  Critical message
+2023/12/06 13:00:30.322  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:00:51.657  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   4.199649ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 13:01:19.054  [D] [main.go:48]  Debug message
+2023/12/06 13:01:19.054  [I] [main.go:49]  Info message
+2023/12/06 13:01:19.054  [W] [main.go:50]  Warning message
+2023/12/06 13:01:19.054  [E] [main.go:51]  Error message
+2023/12/06 13:01:19.054  [C] [main.go:52]  Critical message
+2023/12/06 13:01:19.059  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:01:30.356  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   7.092243ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 13:02:10.191  [D] [main.go:48]  Debug message
+2023/12/06 13:02:10.191  [I] [main.go:49]  Info message
+2023/12/06 13:02:10.191  [W] [main.go:50]  Warning message
+2023/12/06 13:02:10.191  [E] [main.go:51]  Error message
+2023/12/06 13:02:10.191  [C] [main.go:52]  Critical message
+2023/12/06 13:02:10.194  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:16:51.111  [D] [main.go:48]  Debug message
+2023/12/06 13:16:51.111  [I] [main.go:49]  Info message
+2023/12/06 13:16:51.111  [W] [main.go:50]  Warning message
+2023/12/06 13:16:51.111  [E] [main.go:51]  Error message
+2023/12/06 13:16:51.111  [C] [main.go:52]  Critical message
+2023/12/06 13:16:51.115  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:17:03.096  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    104.525µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 13:17:03.106  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    233.917µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 13:17:03.108  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    230.842µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 13:17:03.109  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    664.618µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 13:17:03.249  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    191.549µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 13:17:03.346  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     47.526µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 13:17:03.356  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    153.291µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 13:17:03.357  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    190.654µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 13:17:03.358  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    645.376µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 13:17:03.423  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    339.102µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 13:17:03.730  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     28.417µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 13:17:03.738  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    188.537µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 13:17:03.740  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     249.35µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 13:17:03.740  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    701.793µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 13:17:03.805  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     88.231µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 13:17:04.019  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     28.625µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 13:17:04.027  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    174.658µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 13:17:04.027  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    235.641µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 13:17:04.028  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|      662.9µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 13:17:04.098  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    107.148µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 13:17:04.199  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     37.546µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 13:17:04.208  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    209.411µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 13:17:04.208  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    308.363µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 13:17:04.208  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    634.505µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 13:17:04.281  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     86.346µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 13:17:15.965  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|  14.706846ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 13:24:44.329  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     42.585µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 13:24:44.344  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    164.963µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 13:24:44.345  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    249.452µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 13:24:44.346  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    676.493µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 13:24:44.425  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    100.682µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 13:25:05.288  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:25:05.289  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 13:25:05.289  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:25:05.289  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:25:05.289  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:39
+2023/12/06 13:25:05.289  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:25:05.289  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:25:05.289  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:25:05.289  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:25:05.289  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:25:05.289  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:25:05.289  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:25:05.289  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:25:05.289  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 13:25:51.586  [D] [main.go:48]  Debug message
+2023/12/06 13:25:51.587  [I] [main.go:49]  Info message
+2023/12/06 13:25:51.587  [W] [main.go:50]  Warning message
+2023/12/06 13:25:51.587  [E] [main.go:51]  Error message
+2023/12/06 13:25:51.587  [C] [main.go:52]  Critical message
+2023/12/06 13:25:51.590  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:26:09.745  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:26:09.745  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 13:26:09.745  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:26:09.745  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:26:09.745  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:39
+2023/12/06 13:26:09.745  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:26:09.745  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:26:09.745  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:26:09.745  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:26:09.745  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:26:09.745  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:26:09.745  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:26:09.745  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:26:09.745  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 13:27:41.269  [D] [main.go:48]  Debug message
+2023/12/06 13:27:41.269  [I] [main.go:49]  Info message
+2023/12/06 13:27:41.269  [W] [main.go:50]  Warning message
+2023/12/06 13:27:41.269  [E] [main.go:51]  Error message
+2023/12/06 13:27:41.269  [C] [main.go:52]  Critical message
+2023/12/06 13:27:41.272  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:27:59.320  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:27:59.320  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 13:27:59.320  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:27:59.320  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:27:59.320  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:39
+2023/12/06 13:27:59.320  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:27:59.320  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:27:59.320  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:27:59.320  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:27:59.320  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:27:59.320  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:27:59.320  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:27:59.320  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:27:59.320  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 13:28:50.489  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:28:50.489  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 13:28:50.489  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:28:50.489  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:28:50.489  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:39
+2023/12/06 13:28:50.489  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:28:50.489  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:28:50.489  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:28:50.489  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:28:50.489  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:28:50.489  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:28:50.489  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:28:50.489  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:28:50.489  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 13:32:06.700  [D] [main.go:48]  Debug message
+2023/12/06 13:32:06.700  [I] [main.go:49]  Info message
+2023/12/06 13:32:06.700  [W] [main.go:50]  Warning message
+2023/12/06 13:32:06.700  [E] [main.go:51]  Error message
+2023/12/06 13:32:06.700  [C] [main.go:52]  Critical message
+2023/12/06 13:32:06.704  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:34:12.187  [D] [main.go:48]  Debug message
+2023/12/06 13:34:12.187  [I] [main.go:49]  Info message
+2023/12/06 13:34:12.187  [W] [main.go:50]  Warning message
+2023/12/06 13:34:12.187  [E] [main.go:51]  Error message
+2023/12/06 13:34:12.187  [C] [main.go:52]  Critical message
+2023/12/06 13:34:12.190  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:34:17.278  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:34:17.278  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 13:34:17.278  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:34:17.278  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:34:17.278  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:40
+2023/12/06 13:34:17.278  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:34:17.278  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:34:17.278  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:34:17.278  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:34:17.278  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:34:17.278  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:34:17.278  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:34:17.278  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:34:17.278  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 13:36:49.353  [D] [main.go:48]  Debug message
+2023/12/06 13:36:49.353  [I] [main.go:49]  Info message
+2023/12/06 13:36:49.353  [W] [main.go:50]  Warning message
+2023/12/06 13:36:49.353  [E] [main.go:51]  Error message
+2023/12/06 13:36:49.353  [C] [main.go:52]  Critical message
+2023/12/06 13:36:49.356  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:41:25.744  [D] [main.go:48]  Debug message
+2023/12/06 13:41:25.744  [I] [main.go:49]  Info message
+2023/12/06 13:41:25.744  [W] [main.go:50]  Warning message
+2023/12/06 13:41:25.744  [E] [main.go:51]  Error message
+2023/12/06 13:41:25.745  [C] [main.go:52]  Critical message
+2023/12/06 13:41:25.748  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:41:37.567  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|      62.67µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 13:41:37.576  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    165.272µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 13:41:37.578  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    230.841µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 13:41:37.578  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     553.37µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 13:41:37.716  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    501.896µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 13:41:47.438  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:41:47.438  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [7] with length 7
+2023/12/06 13:41:47.438  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:41:47.438  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:41:47.438  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:64
+2023/12/06 13:41:47.438  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:41:47.438  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:41:47.438  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:41:47.438  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:41:47.438  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:41:47.438  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:41:47.438  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:41:47.438  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:41:47.438  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 13:44:08.798  [D] [main.go:48]  Debug message
+2023/12/06 13:44:08.798  [I] [main.go:49]  Info message
+2023/12/06 13:44:08.798  [W] [main.go:50]  Warning message
+2023/12/06 13:44:08.798  [E] [main.go:51]  Error message
+2023/12/06 13:44:08.798  [C] [main.go:52]  Critical message
+2023/12/06 13:44:08.805  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:44:14.327  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:44:14.327  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [7] with length 7
+2023/12/06 13:44:14.327  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:44:14.327  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:44:14.327  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:63
+2023/12/06 13:44:14.327  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:44:14.327  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:44:14.327  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:44:14.327  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:44:14.327  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:44:14.327  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:44:14.327  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:44:14.327  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:44:14.327  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 13:44:26.105  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:44:26.105  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [7] with length 7
+2023/12/06 13:44:26.105  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:44:26.105  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:44:26.105  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:63
+2023/12/06 13:44:26.105  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:44:26.105  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:44:26.106  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:44:26.106  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:44:26.106  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:44:26.106  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:44:26.106  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:44:26.106  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:44:26.106  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 13:44:41.999  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:44:41.999  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 13:44:41.999  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:44:41.999  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:44:42.000  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:40
+2023/12/06 13:44:42.000  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:44:42.000  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:44:42.000  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:44:42.000  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:44:42.000  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:44:42.000  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:44:42.000  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:44:42.000  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:44:42.000  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 13:47:44.746  [D] [main.go:48]  Debug message
+2023/12/06 13:47:44.746  [I] [main.go:49]  Info message
+2023/12/06 13:47:44.746  [W] [main.go:50]  Warning message
+2023/12/06 13:47:44.747  [E] [main.go:51]  Error message
+2023/12/06 13:47:44.747  [C] [main.go:52]  Critical message
+2023/12/06 13:47:44.750  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 13:47:54.224  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    213.028µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 13:47:54.255  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    372.984µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 13:47:54.256  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.108246ms|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 13:47:54.260  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    415.047µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 13:47:54.413  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    209.479µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 13:48:04.468  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 13:48:04.468  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 13:48:04.468  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 13:48:04.468  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 13:48:04.468  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:40
+2023/12/06 13:48:04.468  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 13:48:04.468  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 13:48:04.468  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 13:48:04.468  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 13:48:04.468  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 13:48:04.468  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 13:48:04.468  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 13:48:04.468  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 13:48:04.468  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 14:00:01.416  [D] [main.go:48]  Debug message
+2023/12/06 14:00:01.416  [I] [main.go:49]  Info message
+2023/12/06 14:00:01.416  [W] [main.go:50]  Warning message
+2023/12/06 14:00:01.416  [E] [main.go:51]  Error message
+2023/12/06 14:00:01.416  [C] [main.go:52]  Critical message
+2023/12/06 14:00:01.420  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 14:00:22.247  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    217.887µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 14:00:22.275  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     366.03µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 14:00:22.280  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    928.707µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 14:00:22.282  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    402.722µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 14:00:22.429  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    218.431µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 14:00:53.263  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 14:00:53.263  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 14:00:53.263  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 14:00:53.263  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 14:00:53.263  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:40
+2023/12/06 14:00:53.263  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 14:00:53.263  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 14:00:53.263  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 14:00:53.263  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 14:00:53.263  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 14:00:53.263  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 14:00:53.263  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 14:00:53.263  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 14:00:53.263  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 14:14:23.336  [D] [main.go:48]  Debug message
+2023/12/06 14:14:23.336  [I] [main.go:49]  Info message
+2023/12/06 14:14:23.336  [W] [main.go:50]  Warning message
+2023/12/06 14:14:23.336  [E] [main.go:51]  Error message
+2023/12/06 14:14:23.336  [C] [main.go:52]  Critical message
+2023/12/06 14:14:23.339  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 14:14:33.284  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 14:14:33.284  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 14:14:33.284  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 14:14:33.284  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 14:14:33.284  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:40
+2023/12/06 14:14:33.284  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 14:14:33.284  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 14:14:33.284  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 14:14:33.284  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 14:14:33.284  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 14:14:33.284  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 14:14:33.285  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 14:14:33.285  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 14:14:33.285  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 14:17:27.679  [D] [main.go:48]  Debug message
+2023/12/06 14:17:27.679  [I] [main.go:49]  Info message
+2023/12/06 14:17:27.679  [W] [main.go:50]  Warning message
+2023/12/06 14:17:27.680  [E] [main.go:51]  Error message
+2023/12/06 14:17:27.680  [C] [main.go:52]  Critical message
+2023/12/06 14:17:27.685  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 14:17:40.635  [D] [main.go:48]  Debug message
+2023/12/06 14:17:40.635  [I] [main.go:49]  Info message
+2023/12/06 14:17:40.635  [W] [main.go:50]  Warning message
+2023/12/06 14:17:40.635  [E] [main.go:51]  Error message
+2023/12/06 14:17:40.635  [C] [main.go:52]  Critical message
+2023/12/06 14:17:40.639  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 14:17:50.404  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 14:17:50.405  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 14:17:50.405  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 14:17:50.405  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 14:17:50.405  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:42
+2023/12/06 14:17:50.405  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 14:17:50.405  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 14:17:50.405  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 14:17:50.405  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 14:17:50.405  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 14:17:50.405  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 14:17:50.405  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 14:17:50.405  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 14:17:50.405  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 14:17:51.138  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 14:17:51.138  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 14:17:51.138  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 14:17:51.138  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 14:17:51.138  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:42
+2023/12/06 14:17:51.138  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 14:17:51.138  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 14:17:51.138  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 14:17:51.138  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 14:17:51.138  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 14:17:51.138  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 14:17:51.138  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 14:17:51.138  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 14:17:51.138  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 14:17:51.328  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 14:17:51.328  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 14:17:51.328  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 14:17:51.328  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 14:17:51.328  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:42
+2023/12/06 14:17:51.328  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 14:17:51.328  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 14:17:51.328  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 14:17:51.328  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 14:17:51.328  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 14:17:51.328  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 14:17:51.328  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 14:17:51.328  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 14:17:51.328  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 14:17:53.063  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     59.427µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 14:17:53.073  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    161.137µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 14:17:53.074  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    445.812µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 14:17:53.076  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     465.96µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 14:17:53.209  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    125.586µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 14:17:59.722  [D] [main.go:48]  Debug message
+2023/12/06 14:17:59.722  [I] [main.go:49]  Info message
+2023/12/06 14:17:59.722  [W] [main.go:50]  Warning message
+2023/12/06 14:17:59.722  [E] [main.go:51]  Error message
+2023/12/06 14:17:59.722  [C] [main.go:52]  Critical message
+2023/12/06 14:17:59.726  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 14:18:21.990  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 14:18:21.990  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 14:18:21.990  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 14:18:21.990  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 14:18:21.991  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:42
+2023/12/06 14:18:21.991  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 14:18:21.991  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 14:18:21.991  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 14:18:21.991  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 14:18:21.991  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 14:18:21.991  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 14:18:21.991  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 14:18:21.991  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 14:18:21.991  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 14:19:42.793  [D] [main.go:48]  Debug message
+2023/12/06 14:19:42.793  [I] [main.go:49]  Info message
+2023/12/06 14:19:42.793  [W] [main.go:50]  Warning message
+2023/12/06 14:19:42.793  [E] [main.go:51]  Error message
+2023/12/06 14:19:42.793  [C] [main.go:52]  Critical message
+2023/12/06 14:19:42.797  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 14:20:03.566  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     60.502µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 14:20:03.575  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    159.861µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 14:20:03.577  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    481.611µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 14:20:03.577  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    206.046µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 14:20:03.652  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    196.281µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 14:20:12.492  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   7.700698ms|   match|[97;46m POST    [0m /v1/user/import/xlsx   r:/v1/user/import/xlsx
+2023/12/06 14:21:57.189  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 14:21:57.189  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 14:21:57.189  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 14:21:57.189  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 14:21:57.189  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:42
+2023/12/06 14:21:57.189  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 14:21:57.189  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 14:21:57.189  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 14:21:57.189  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 14:21:57.189  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 14:21:57.189  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 14:21:57.189  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 14:21:57.189  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 14:21:57.189  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 14:25:47.766  [D] [main.go:48]  Debug message
+2023/12/06 14:25:47.766  [I] [main.go:49]  Info message
+2023/12/06 14:25:47.766  [W] [main.go:50]  Warning message
+2023/12/06 14:25:47.766  [E] [main.go:51]  Error message
+2023/12/06 14:25:47.766  [C] [main.go:52]  Critical message
+2023/12/06 14:25:47.770  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 14:37:06.137  [D] [main.go:48]  Debug message
+2023/12/06 14:37:06.137  [I] [main.go:49]  Info message
+2023/12/06 14:37:06.137  [W] [main.go:50]  Warning message
+2023/12/06 14:37:06.137  [E] [main.go:51]  Error message
+2023/12/06 14:37:06.137  [C] [main.go:52]  Critical message
+2023/12/06 14:37:06.141  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 14:37:07.458  [D] [main.go:48]  Debug message
+2023/12/06 14:37:07.458  [I] [main.go:49]  Info message
+2023/12/06 14:37:07.458  [W] [main.go:50]  Warning message
+2023/12/06 14:37:07.458  [E] [main.go:51]  Error message
+2023/12/06 14:37:07.458  [C] [main.go:52]  Critical message
+2023/12/06 14:37:07.462  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 14:37:13.832  [D] [main.go:48]  Debug message
+2023/12/06 14:37:13.832  [I] [main.go:49]  Info message
+2023/12/06 14:37:13.832  [W] [main.go:50]  Warning message
+2023/12/06 14:37:13.832  [E] [main.go:51]  Error message
+2023/12/06 14:37:13.832  [C] [main.go:52]  Critical message
+2023/12/06 14:37:13.836  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 15:02:12.503  [D] [main.go:48]  Debug message
+2023/12/06 15:02:12.503  [I] [main.go:49]  Info message
+2023/12/06 15:02:12.503  [W] [main.go:50]  Warning message
+2023/12/06 15:02:12.503  [E] [main.go:51]  Error message
+2023/12/06 15:02:12.503  [C] [main.go:52]  Critical message
+2023/12/06 15:02:12.506  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 15:08:50.591  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     77.243µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 15:08:50.600  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    195.243µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 15:08:50.602  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    486.959µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 15:08:50.603  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    280.077µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 15:08:50.739  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    180.979µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 15:08:50.747  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|    466.112µs|   match|[97;44m GET     [0m /swagger/favicon-32x32.png
+2023/12/06 15:08:51.221  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     233.14µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 15:08:51.248  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    324.936µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 15:08:51.251  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    428.991µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 15:08:51.252  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|   1.138999ms|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 15:08:51.323  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    349.164µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 15:08:51.575  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     82.204µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 15:08:51.583  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    177.888µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 15:08:51.584  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    622.368µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 15:08:51.585  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    247.662µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 15:08:51.647  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     79.051µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 15:08:51.821  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     34.361µs|   match|[97;44m GET     [0m /swagger/
+2023/12/06 15:08:51.831  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    168.765µs|   match|[97;44m GET     [0m /swagger/swagger-ui.css
+2023/12/06 15:08:51.832  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    296.393µs|   match|[97;44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/12/06 15:08:51.833  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|     759.69µs|   match|[97;44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/12/06 15:08:51.898  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|      110.1µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 15:09:01.957  [C] [config.go:500]  the request url is  /v1/user/import/xlsx
+2023/12/06 15:09:01.957  [C] [config.go:501]  Handler crashed with error runtime error: index out of range [5] with length 3
+2023/12/06 15:09:01.957  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:914
+2023/12/06 15:09:01.957  [C] [config.go:507]  /snap/go/10426/src/runtime/panic.go:114
+2023/12/06 15:09:01.957  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/helpers/common/common.go:42
+2023/12/06 15:09:01.957  [C] [config.go:507]  /home/ridesh/Desktop/CarCrudv2/controllers/userController.go:628
+2023/12/06 15:09:01.957  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:596
+2023/12/06 15:09:01.957  [C] [config.go:507]  /snap/go/10426/src/reflect/value.go:380
+2023/12/06 15:09:01.957  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1233
+2023/12/06 15:09:01.957  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/filter.go:83
+2023/12/06 15:09:01.957  [C] [config.go:507]  /home/ridesh/go/pkg/mod/github.com/beego/beego/v2@v2.1.4/server/web/router.go:1002
+2023/12/06 15:09:01.957  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2938
+2023/12/06 15:09:01.957  [C] [config.go:507]  /snap/go/10426/src/net/http/server.go:2009
+2023/12/06 15:09:01.958  [C] [config.go:507]  /snap/go/10426/src/runtime/asm_amd64.s:1650
+2023/12/06 15:13:10.726  [D] [main.go:48]  Debug message
+2023/12/06 15:13:10.726  [I] [main.go:49]  Info message
+2023/12/06 15:13:10.726  [W] [main.go:50]  Warning message
+2023/12/06 15:13:10.726  [E] [main.go:51]  Error message
+2023/12/06 15:13:10.726  [C] [main.go:52]  Critical message
+2023/12/06 15:13:10.729  [I] [server.go:280]  http server Running on http://:8080
+2023/12/06 15:13:12.949  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    196.529µs|   match|[97;44m GET     [0m /swagger/swagger.json/
+2023/12/06 15:13:15.665  [D] [router.go:1305]  |            ::1|[97;42m 200 [0m|    113.348µs|   match|[97;44m GET     [0m /swagger/swagger.json
+2023/12/06 15:13:21.826  [D] [router.go:1305]  |            ::1|[97;43m 404 [0m|    192.397µs| nomatch|[97;44m GET     [0m /swagger/swagger.json/v1
+2023/12/06 15:13:26.267  [D] [router.go:1305]  |            ::1|[90;47m 304 [0m|     31.956µs|   match|[97;44m GET     [0m /swagger/swagger.json/

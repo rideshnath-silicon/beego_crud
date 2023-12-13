@@ -15,7 +15,7 @@ var user_ctrl = controllers.UserController{}
 
 func TestLoginUser(t *testing.T) {
 	t.Run("Login User", func(t *testing.T) {
-		endPoint := "/v1/login/"
+		endPoint := "/v1/user/login/"
 
 		var jsonStr = []byte(`{
 			"username" : "rideshnath.siliconithub@gmail.com",
@@ -40,8 +40,8 @@ func TestLoginUser(t *testing.T) {
 
 func TestGetusers(t *testing.T) {
 	t.Run("Get All User", func(t *testing.T) {
-		endPoint := "/v1/users/users"
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDE0MzgzMzB9.e32LZsFTAehoXxR9v__btd9IiEoCMhMDDLV1tLXNyaU"
+		endPoint := "/v1/user/secure/users"
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDIyNzUzOTB9.kP8HRgfkuC3nKSA8evphI_x5NQP4DDrW2ih0vCly4QM"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
 
 		r, err := http.NewRequest("GET", endPoint, nil)
@@ -60,7 +60,7 @@ func TestNewUser(t *testing.T) {
 	t.Run("new user", func(t *testing.T) {
 		endPoint := "/v1/user/register"
 		var jsonStr = []byte(`{"first_name":"Dwarkesh","last_name":"patel","email":"dwarkeshpatel@gmail.com","country":"India","role":"Developer","age":30,"phone_number":"1234567890","password":"123456"}`)
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDE0MDk0MDR9.b_Faa-LR74VJubKMoO6NyCh2RPNLKxy_dNT_vs3iFTY"
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDIyNzUzOTB9.kP8HRgfkuC3nKSA8evphI_x5NQP4DDrW2ih0vCly4QM"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
 
 		r, err := http.NewRequest("POST", endPoint, bytes.NewBuffer(jsonStr))
@@ -77,9 +77,9 @@ func TestNewUser(t *testing.T) {
 
 func TestUpdateUser(t *testing.T) {
 	t.Run("Update user", func(t *testing.T) {
-		endPoint := "/v1/user/update"
-		var jsonStr = []byte(`{"user_id":9,"first_name":"Dwarkesh","last_name":"patel","email":"dwarkeshpatel@gmail.com","country":"India","role":"Developer","age":30,"phone_number":"1234567890"}`)
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNDY4ODl9.t-cNDRqPHygAu1yGHjOtpJWvhj1qaBk0WpTGHxM9Vm4"
+		endPoint := "/v1/user/secure/update"
+		var jsonStr = []byte(`{"user_id":2,"first_name":"Dwarkesh","last_name":"patel","email":"dwarkeshpatel@gmail.com","country_id":25,"role":"Developer","age":30,"phone_number":"1234567890"}`)
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDIyNzUzOTB9.kP8HRgfkuC3nKSA8evphI_x5NQP4DDrW2ih0vCly4QM"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
 		r, err := http.NewRequest("PUT", endPoint, bytes.NewBuffer(jsonStr))
 		if err != nil {
@@ -97,9 +97,9 @@ func TestUpdateUser(t *testing.T) {
 // Please run Indidual t.run in this function to test the send otp and verify otp
 func TestVerifyEmail(t *testing.T) {
 	t.Run("Send email otp", func(t *testing.T) {
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNDY4ODl9.t-cNDRqPHygAu1yGHjOtpJWvhj1qaBk0WpTGHxM9Vm4"
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDIyNzUzOTB9.kP8HRgfkuC3nKSA8evphI_x5NQP4DDrW2ih0vCly4QM"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
-		endPoint := "/v1/user/verify_email"
+		endPoint := "/v1/user/secure/verify_email"
 		var jsonStr = []byte(`{
 			"username" : "rideshnath.siliconithub@gmail.com"
 		}`)
@@ -116,7 +116,7 @@ func TestVerifyEmail(t *testing.T) {
 	})
 
 	t.Run("Verify email otp", func(t *testing.T) {
-		endPoint := "/v1/user/verify_email_otp"
+		endPoint := "/v1/user/secure/verify_email_otp"
 
 		// enter otp after getting otp from send otp test
 		var jsonStr = []byte(`{
@@ -142,11 +142,11 @@ func TestVerifyEmail(t *testing.T) {
 
 func TestForgotPassword(t *testing.T) {
 	t.Run("Send  otp", func(t *testing.T) {
-		endPoint := "/v1/user/forgot_pass"
+		endPoint := "/v1/user/secure/forgot_pass"
 		var jsonStr = []byte(`{
 			"username" : "rideshnath.siliconithub@gmail.com"
 		}`)
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNDY4ODl9.t-cNDRqPHygAu1yGHjOtpJWvhj1qaBk0WpTGHxM9Vm4"
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDIyNzUzOTB9.kP8HRgfkuC3nKSA8evphI_x5NQP4DDrW2ih0vCly4QM"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
 
 		r, err := http.NewRequest("POST", endPoint, bytes.NewBuffer(jsonStr))
@@ -164,14 +164,14 @@ func TestForgotPassword(t *testing.T) {
 		t.Log(w.Body)
 	})
 	t.Run("Verify email otp", func(t *testing.T) {
-		endPoint := "/v1/user/reset_pass_otp"
+		endPoint := "/v1/user/secure/reset_pass_otp"
 		// enter otp after getting otp from send otp test
 		var jsonStr = []byte(`{
 			"email" : "rideshnath.siliconithub@gmail.com",
 			"otp":"0703",
 		"new_password":"123456"
 		}`)
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNDY4ODl9.t-cNDRqPHygAu1yGHjOtpJWvhj1qaBk0WpTGHxM9Vm4"
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDIyNzUzOTB9.kP8HRgfkuC3nKSA8evphI_x5NQP4DDrW2ih0vCly4QM"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
 
 		r, err := http.NewRequest("POST", endPoint, bytes.NewBuffer(jsonStr))
@@ -191,10 +191,10 @@ func TestSerchUser(t *testing.T) {
 	t.Run("Search users", func(t *testing.T) {
 		endPoint := "/v1/user/search"
 		var jsonStr = []byte(`{
-			"search" : "rid"
+			"search" : "d"
 		}`)
 
-		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDEzNDY4ODl9.t-cNDRqPHygAu1yGHjOtpJWvhj1qaBk0WpTGHxM9Vm4"
+		validToken := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InJpZGVzaG5hdGguc2lsaWNvbml0aHViQGdtYWlsLmNvbSIsIklEIjoxLCJleHAiOjE3MDIyNzUzOTB9.kP8HRgfkuC3nKSA8evphI_x5NQP4DDrW2ih0vCly4QM"
 		tokan := fmt.Sprintf("Bearer %s", validToken)
 
 		r, err := http.NewRequest("POST", endPoint, bytes.NewBuffer(jsonStr))

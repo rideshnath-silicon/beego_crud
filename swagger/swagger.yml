@@ -248,6 +248,23 @@ paths:
             type: string
         "403":
           description: ""
+  /home/delete/{id}:
+    delete:
+      tags:
+      - home
+      operationId: HomeSettingController.Delete home setting
+      parameters:
+      - in: path
+        name: id
+        description: Enter id for delete home settings
+        required: true
+        schema:
+          $ref: '#/definitions/in'
+      responses:
+        "201":
+          description: '{string} string'
+        "403":
+          description: ""
   /home/update:
     put:
       tags:
@@ -313,6 +330,56 @@ paths:
             $ref: '#/definitions/object'
         "403":
           description: ""
+  /user/export/pdf/:
+    get:
+      tags:
+      - user
+      operationId: UserController.export Data
+      parameters:
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
+      responses:
+        "201":
+          description: '{string} string'
+        "403":
+          description: ""
+  /user/export/xlxs:
+    get:
+      tags:
+      - user
+      operationId: UserController.export Data
+      parameters:
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
+      responses:
+        "201":
+          description: '{string} string'
+        "403":
+          description: ""
+  /user/import/xlsx:
+    post:
+      tags:
+      - user
+      operationId: UserController.export Data
+      parameters:
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
+      - in: formData
+        name: file
+        description: File to be uploaded
+        required: true
+        type: file
+      responses:
+        "201":
+          description: '{string} string'
+        "403":
+          description: ""
   /user/login:
     post:
       tags:
@@ -325,6 +392,14 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.UserLoginRequest'
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
+      - in: header
+        name: Accept-Languages
+        description: Bearer YourAccessToken
+        type: string
       responses:
         "201":
           description: ""
@@ -340,6 +415,11 @@ paths:
         logout
         <br>
       operationId: UserController.logout user
+      parameters:
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       responses:
         "403":
           description: ""
@@ -358,12 +438,49 @@ paths:
             $ref: '#/definitions/object'
         "403":
           description: ""
+  /user/newMessage:
+    post:
+      tags:
+      - user
+      description: |-
+        generate new message
+        <br>
+      operationId: UserController.Create message code
+      parameters:
+      - in: formData
+        name: Code
+        description: Write Message Key without space you can you ( _ ) place of space
+        required: true
+        type: string
+      - in: formData
+        name: English
+        description: Write Message in English
+        required: true
+        type: string
+      - in: formData
+        name: Hindi
+        description: Write Message in Hindi
+        required: true
+        type: string
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
+      responses:
+        "200":
+          description: '{string} string'
+        "403":
+          description: ""
   /user/register:
     post:
       tags:
       - user
       operationId: UserController.Insert New User
       parameters:
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: body
         name: body
         description: Insert New User
@@ -375,6 +492,35 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/models.Users'
+        "403":
+          description: ""
+  /user/secure/delete/{id}:
+    delete:
+      tags:
+      - user
+      description: |-
+        delete user
+        <br>
+      operationId: UserController.delete user
+      parameters:
+      - in: path
+        name: id
+        description: user id to delete recode
+        required: true
+        type: integer
+        format: int64
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} string'
         "403":
           description: ""
   /user/secure/forgot_pass:
@@ -389,6 +535,10 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.SendOtpData'
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -399,6 +549,37 @@ paths:
           description: ""
           schema:
             type: string
+        "403":
+          description: ""
+  /user/secure/inup:
+    post:
+      tags:
+      - user
+      description: |-
+        Insert update both
+        <br>
+      operationId: UserController.Insert Update
+      parameters:
+      - in: body
+        name: body
+        description: update New User
+        required: true
+        schema:
+          $ref: '#/definitions/models.NewUserRequest'
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
+      - in: header
+        name: Authorization
+        description: Bearer YourAccessToken
+        required: true
+        type: string
+      responses:
+        "201":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Users'
         "403":
           description: ""
   /user/secure/reset_pass:
@@ -413,6 +594,10 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.ResetUserPassword'
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -437,6 +622,10 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.ResetUserPasswordOtp'
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -461,6 +650,10 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.SearchRequest'
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -485,6 +678,10 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.UpdateUserRequest'
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -506,6 +703,10 @@ paths:
         <br>
       operationId: UserController.Get All
       parameters:
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -524,6 +725,10 @@ paths:
       - user
       operationId: UserController.verifid users
       parameters:
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -548,6 +753,10 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.SendOtpData'
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -572,6 +781,10 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/models.VerifyEmailOTPRequest'
+      - in: query
+        name: lang
+        description: use en-US or hi-IN
+        type: string
       - in: header
         name: Authorization
         description: Bearer YourAccessToken
@@ -585,6 +798,9 @@ paths:
         "403":
           description: ""
 definitions:
+  in:
+    title: in
+    type: object
   models.GetHomeSettingRequest:
     title: GetHomeSettingRequest
     type: object

@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"CarCrudv2/helpers"
 	"net/http"
 	"strings"
 
@@ -29,7 +30,8 @@ func JWTMiddleware(ctx *context.Context) {
 	})
 	if err != nil || !token.Valid {
 		ctx.Output.SetStatus(http.StatusUnauthorized)
-		ctx.Output.JSON(map[string]string{"error": "Invalid token"}, true, false)
+		STR := helpers.GetLangaugeMessage("en-US", "TOKAN_NOT_FOUND")
+		ctx.Output.JSON(map[string]string{"error": STR}, true, false)
 		return
 	}
 	ctx.Input.SetData("user", token.Claims.(jwt.MapClaims))
@@ -38,7 +40,6 @@ func JWTMiddleware(ctx *context.Context) {
 func ContainsBearer(token string) bool {
 	// Convert the token to lowercase to make the comparison case-insensitive
 	lowerToken := strings.ToLower(token)
-
 	// Check if the token starts with "bearer "
 	return strings.HasPrefix(lowerToken, "bearer ")
 }

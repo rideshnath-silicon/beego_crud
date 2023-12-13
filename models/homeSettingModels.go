@@ -10,18 +10,18 @@ import (
 func InsertNewHomeSetting(data InserNewHomeSettingRequest) (interface{}, error) {
 	o := orm.NewOrm()
 	var hsetting = HomeSetting{
-		Section:   data.Section,
-		Type:      data.Type,
-		Key:       data.Key,
-		Value:     data.Value,
-		CreatedAt: time.Now(),
+		Section:     data.Section,
+		Type:        data.Type,
+		Key:         data.Key,
+		Value:       data.Value,
+		CreatedDate: time.Now(),
 	}
 	num, err := o.Insert(&hsetting)
 	if err != nil {
-		return nil, err
+		return nil,  errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
-		return nil, errors.New("error : error in insert the data")
+		return nil, errors.New("DATABASE_ERROR")
 	}
 	return hsetting, nil
 }
@@ -29,19 +29,19 @@ func InsertNewHomeSetting(data InserNewHomeSettingRequest) (interface{}, error) 
 func UpdateHomeSeting(data UpdateHomeSetingRequest) (interface{}, error) {
 	o := orm.NewOrm()
 	var hsetting = HomeSetting{
-		Id:       data.Id,
-		Section:  data.Section,
-		Type:     data.Type,
-		Key:      data.Key,
-		Value:    data.Value,
-		UpdateAt: time.Now(),
+		Id:         data.Id,
+		Section:    data.Section,
+		Type:       data.Type,
+		Key:        data.Key,
+		Value:      data.Value,
+		UpdateDate: time.Now(),
 	}
 	num, err := o.Update(&hsetting, "id", "section", "type", "key", "value", "update_at")
 	if err != nil {
-		return nil, err
+		return nil,  errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
-		return nil, errors.New("error : error in Update the data")
+		return nil, errors.New("DATABASE_ERROR")
 	}
 	return hsetting, nil
 }
@@ -51,10 +51,10 @@ func GetHomeSetting(id uint) (HomeSetting, error) {
 	var hsetting = HomeSetting{Id: id}
 	num, err := o.QueryTable(new(HomeSetting)).Filter("id", id).All(&hsetting)
 	if err != nil {
-		return hsetting, err
+		return hsetting,  errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
-		return hsetting, errors.New("error := Please enter valid id to get data")
+		return hsetting, errors.New("LOGIN_ERROR")
 	}
 	return hsetting, nil
 }
@@ -70,8 +70,21 @@ func UserWiseHomeseting(id uint) (interface{}, error) {
 	`
 	err := o.Raw(sqlQuery, id).QueryRow(&userhome)
 	if err != nil {
-		return nil, err
+		return nil,  errors.New("DATABASE_ERROR")
 	}
 
 	return userhome, nil
+}
+
+func DeleteHomeSetting(id int) (interface{}, error) {
+	o := orm.NewOrm()
+	var hsetting = HomeSetting{Id: uint(id)}
+	num, err := o.Delete(&hsetting)
+	if err != nil {
+		return "",  errors.New("DATABASE_ERROR")
+	}
+	if num == 0 {
+		return "",  errors.New("DATABASE_ERROR")
+	}
+	return "DATA_DELETE", nil
 }

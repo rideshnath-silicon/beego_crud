@@ -2,6 +2,7 @@ package test
 
 import (
 	"CarCrudv2/helpers"
+	"CarCrudv2/helpers/common"
 	"log"
 	"testing"
 )
@@ -24,7 +25,7 @@ func TestHelpers(t *testing.T) {
 	})
 
 	t.Run("Send Otp", func(t *testing.T) {
-		_, err := helpers.SendMailOTp("rideshnath.siliconithub@gmail.com", "ridesh")
+		_, err := common.VerifyEmail("rideshnath.siliconithub@gmail.com", "ridesh")
 		if err != nil {
 			t.Errorf(err.Error())
 		}

@@ -15,19 +15,19 @@ import (
 )
 
 func init() {
-	orm.RegisterModel(new(Users), new(Car), new(HomeSetting))
+	orm.RegisterModel(new(Users), new(Car), new(HomeSetting),new(EmailLogs))
 }
 
 // >>>>>>>>>>>>Models For tables Start from Here <<<<<<<<<<<<<<<<<<<<<<
 type Users struct {
 	Id          uint      `json:"user_id" orm:"pk;auto"`
-	FirstName   string    `json:"first_name" orm:"column(first_name);null"`
-	LastName    string    `json:"last_name" orm:"null"`
+	FirstName   string    `json:"first_name" orm:"column(first_name);null" valid:"MaxSize(255);Required"`
+	LastName    string    `json:"last_name" orm:"null" valid:"MaxSize(255);Required"`
 	Email       string    `json:"email" orm:"unique"`
 	PhoneNumber string    `json:"phone_number" orm:"null"`
 	Country     int       `json:"country_id"`
 	Role        string    `json:"role"`
-	Age         int       `json:"age" orm:"size(3)"`
+	Age         int       `json:"age"`
 	Password    string    `json:"password"`
 	Otp         string    `orm:"null"`
 	Verified    string    `orm:"null"`
@@ -44,10 +44,6 @@ const (
 	SUV       CarType = "SUV"
 )
 
-type FileUploadModel struct {
-	File *[]byte `form:"file" required:"true" description:"File content"`
-}
-
 type Car struct {
 	Id          uint      `json:"car_id" orm:"pk;auto;column(id)"`
 	CarName     string    `orm:"column(car_name)"`
@@ -56,18 +52,27 @@ type Car struct {
 	Model       string    `orm:"column(model)"`
 	Type        CarType   `orm:"column(car_type);type(enum)"`
 	CreatedDate time.Time `orm:"null;column(ctreated_date)"`
-	UpdateAt    time.Time `orm:"null;column(updated_at)"`
+	UpdateDate  time.Time `orm:"null;column(updated_at)"`
 }
 
 type HomeSetting struct {
-	Id        uint      `orm:"pk;auto;column(id);type(integer)"`
-	Section   string    `orm:"column(section);type(character);size(255)"`
-	Type      string    `orm:"column(type);type(character);size(255)"`
-	Key       string    `orm:"column(key);type(character);size(255)"`
-	Value     string    `orm:"column(value);type(character);size(255)"`
-	Demo      string    `orm:"column(demo);type(text);size(255)"`
-	CreatedAt time.Time `orm:"null;column(created_at);type(timestamptz)"`
-	UpdateAt  time.Time `orm:"null;column(update_at);type(timestamptz)"`
+	Id          uint      `orm:"pk;auto;column(id);type(integer)"`
+	Section     string    `orm:"column(section);type(character);size(255)"`
+	Type        string    `orm:"column(type);type(character);size(255)"`
+	Key         string    `orm:"column(key);type(character);size(255)"`
+	Value       string    `orm:"column(value);type(character);size(255)"`
+	Demo        string    `orm:"column(demo);type(text);size(255)"`
+	CreatedDate time.Time `orm:"null;column(created_at);type(timestamptz)"`
+	UpdateDate  time.Time `orm:"null;column(update_at);type(timestamptz)"`
+}
+
+type EmailLogs struct {
+	Id      uint   `orm:"pk;auto;column(LogId)"`
+	To      string `orm:"column(emailTo)"`
+	Name    string `orm:"column(name)"`
+	Subject string
+	Body    string
+	Status  string
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<End Table Models>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -78,25 +83,25 @@ type UserLoginRequest struct {
 }
 
 type NewUserRequest struct {
-	FirstName   string `json:"first_name"`
-	LastName    string `json:"last_name"`
-	Email       string `json:"email"`
-	Country     int    `json:"country_id"`
-	Role        string `json:"role"`
-	Age         int    `json:"age"`
-	PhoneNumber string `json:"phone_number"`
-	Password    string `json:"password"`
+	FirstName   string `json:"first_name" valid:"MaxSize(255);Required"`
+	LastName    string `json:"last_name" valid:"MaxSize(255);Required"`
+	Email       string `json:"email" valid:"MaxSize(255);Required;Email"`
+	Country     int    `json:"country_id" valid:"Required"`
+	Role        string `json:"role" valid:"MaxSize(255);Required"`
+	Age         int    `json:"age" valid:"Range(1, 140;Required"`
+	PhoneNumber string `json:"phone_number" valid:"Mobile;Required"`
+	Password    string `json:"password" valid:"MaxSize(25);MinSize(6);Required"`
 }
 
 type UpdateUserRequest struct {
 	Id          uint   `json:"user_id"`
-	FirstName   string `json:"first_name"`
-	LastName    string `json:"last_name" `
-	Email       string `json:"email"`
-	PhoneNumber string `json:"phone_number"`
-	Country     int    `json:"country_id"`
-	Role        string `json:"role"`
-	Age         int    `json:"age" `
+	FirstName   string `json:"first_name" valid:"MaxSize(255);Required"`
+	LastName    string `json:"last_name"  valid:"MaxSize(255);Required"`
+	Email       string `json:"email" valid:"MaxSize(255);Required;Email"`
+	PhoneNumber string `json:"phone_number"  valid:"Mobile;Required"`
+	Country     int    `json:"country_id" valid:"Required"`
+	Role        string `json:"role" valid:"MaxSize(255);Required"`
+	Age         int    `json:"age"  valid:"Range(1, 140;Required"`
 }
 
 type ResetUserPassword struct {
@@ -117,7 +122,7 @@ type UserDetailsRequest struct {
 	LastName  string `json:"last_name" `
 	Email     string `json:"email"`
 	Age       int    `json:"age"`
-	Country   string `json:"country"`
+	Country   string `json:"country_id"`
 }
 
 type SendOtpData struct {
@@ -207,6 +212,8 @@ type UserWiseHomeRequest struct {
 	FirstName string `json:"first_name" `
 	LastName  string `json:"last_name" `
 }
+
+// db syncronization
 
 func SynchronizeModelWithDB(table_name string, modelType reflect.Type) error {
 	// Get a database connection
