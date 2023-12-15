@@ -694,7 +694,7 @@ paths:
             $ref: '#/definitions/models.Users'
         "403":
           description: ""
-  /user/secure/users:
+  /user/secure/users/:
     get:
       tags:
       - user
@@ -707,6 +707,16 @@ paths:
         name: lang
         description: use en-US or hi-IN
         type: string
+      - in: query
+        name: page
+        description: For pagination
+        type: integer
+        format: int64
+      - in: query
+        name: limit
+        description: per page user
+        type: integer
+        format: int64
       - in: header
         name: Authorization
         description: Bearer YourAccessToken

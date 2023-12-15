@@ -15,7 +15,7 @@ import (
 )
 
 func init() {
-	orm.RegisterModel(new(Users), new(Car), new(HomeSetting),new(EmailLogs))
+	orm.RegisterModel(new(Users), new(Car), new(HomeSetting), new(EmailLogs))
 }
 
 // >>>>>>>>>>>>Models For tables Start from Here <<<<<<<<<<<<<<<<<<<<<<
@@ -83,25 +83,25 @@ type UserLoginRequest struct {
 }
 
 type NewUserRequest struct {
-	FirstName   string `json:"first_name" valid:"MaxSize(255);Required"`
-	LastName    string `json:"last_name" valid:"MaxSize(255);Required"`
+	FirstName   string `json:"first_name" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
+	LastName    string `json:"last_name" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
 	Email       string `json:"email" valid:"MaxSize(255);Required;Email"`
 	Country     int    `json:"country_id" valid:"Required"`
 	Role        string `json:"role" valid:"MaxSize(255);Required"`
-	Age         int    `json:"age" valid:"Range(1, 140;Required"`
-	PhoneNumber string `json:"phone_number" valid:"Mobile;Required"`
+	Age         int    `json:"age" valid:"Range(1, 140);Required"`
+	PhoneNumber string `json:"phone_number" valid:"Required;IsMobile"`
 	Password    string `json:"password" valid:"MaxSize(25);MinSize(6);Required"`
 }
 
 type UpdateUserRequest struct {
-	Id          uint   `json:"user_id"`
-	FirstName   string `json:"first_name" valid:"MaxSize(255);Required"`
-	LastName    string `json:"last_name"  valid:"MaxSize(255);Required"`
+	Id          uint   `json:"user_id" valid:"Required"`
+	FirstName   string `json:"first_name" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
+	LastName    string `json:"last_name" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
 	Email       string `json:"email" valid:"MaxSize(255);Required;Email"`
-	PhoneNumber string `json:"phone_number"  valid:"Mobile;Required"`
+	PhoneNumber string `json:"phone_number"  valid:"IsMobile;Required"`
 	Country     int    `json:"country_id" valid:"Required"`
 	Role        string `json:"role" valid:"MaxSize(255);Required"`
-	Age         int    `json:"age"  valid:"Range(1, 140;Required"`
+	Age         int    `json:"age"  valid:"Range(1, 140);Required"`
 }
 
 type ResetUserPassword struct {
@@ -122,7 +122,8 @@ type UserDetailsRequest struct {
 	LastName  string `json:"last_name" `
 	Email     string `json:"email"`
 	Age       int    `json:"age"`
-	Country   string `json:"country_id"`
+	Country   int    `json:"country_id"`
+	CreatedAt string `json:"CreatedDate"`
 }
 
 type SendOtpData struct {
@@ -148,19 +149,19 @@ type GetCountryWiseUserRequest struct {
 /// Car request structs
 
 type GetNewCarRequest struct {
-	CarName    string  `json:"car_name" form:"car_name"`
+	CarName    string  `json:"car_name" form:"car_name" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
 	CarImage   string  `json:"car_imag" form:"file"`
-	ModifiedBy string  `json:"modified_by" form:"modified_by"`
-	Model      string  `json:"model" form:"model"`
+	ModifiedBy string  `json:"modified_by" form:"modified_by" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
+	Model      string  `json:"model" form:"model" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
 	Type       CarType `json:"type" form:"type"`
 }
 
 type UpdateCarRequest struct {
 	Id         uint    `json:"car_id" form:"car_id"`
-	CarName    string  `json:"car_name" form:"car_name"`
+	CarName    string  `json:"car_name" form:"car_name" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
 	CarImage   string  `json:"car_imag" form:"file"`
-	ModifiedBy string  `json:"modified_by" form:"modified_by"`
-	Model      string  `json:"model" form:"model"`
+	ModifiedBy string  `json:"modified_by" form:"modified_by" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
+	Model      string  `json:"model" form:"model" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
 	Type       CarType `json:"type" form:"type"`
 }
 
@@ -186,16 +187,16 @@ type CarDetailsRequest struct {
 // Home Setting reuests
 
 type InserNewHomeSettingRequest struct {
-	Section string `json:"section" form:"section"`
-	Type    string `json:"type" form:"type"`
+	Section string `json:"section" form:"section" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
+	Type    string `json:"type" form:"type" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
 	Key     string `json:"key" form:"key"`
 	Value   string `json:"value" form:"value"`
 }
 
 type UpdateHomeSetingRequest struct {
 	Id      uint   `json:"home_seting_id" form:"home_seting_id"`
-	Section string `json:"section" form:"section"`
-	Type    string `json:"type" form:"type"`
+	Section string `json:"section" form:"section" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
+	Type    string `json:"type" form:"type" valid:"MaxSize(255);MinSize(3);Required;Match(/^[a-zA-Z][a-zA-Z0-9._-]{0,31}$/)"`
 	Key     string `json:"key" form:"key"`
 	Value   string `json:"value" form:"value"`
 }

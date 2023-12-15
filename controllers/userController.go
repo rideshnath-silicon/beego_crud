@@ -14,7 +14,6 @@ import (
 
 	"github.com/beego/beego/v2/client/cache"
 	"github.com/beego/beego/v2/client/httplib"
-	"github.com/beego/beego/v2/core/validation"
 	beego "github.com/beego/beego/v2/server/web"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/jung-kurt/gofpdf"
@@ -23,31 +22,6 @@ import (
 
 type UserController struct {
 	beego.Controller
-}
-
-func init() {
-	validation.SetDefaultMessage(map[string]string{
-		"Required":     "Must be filled in",
-		"Min":          "Minimum allowed value %d",
-		"Max":          "Maximum allowed value %d",
-		"Range":        "Must be between %d and %d",
-		"MinSize":      "Minimum allowed length %d",
-		"MaxSize":      "Maximum allowed length %d",
-		"Length":       "Length must be %d",
-		"Alpha":        "Must consist of letters",
-		"Numeric":      "Must consist of numbers",
-		"AlphaNumeric": "Must consist of letters or numbers",
-		"Match":        "Must match %s",
-		"NoMatch":      "Must not match %s",
-		"AlphaDash":    "Must consist of letters, numbers or symbols (-_)",
-		"Email":        "Must be in correct email format",
-		"IP":           "Must be a valid IP address",
-		"Base64":       "Must be in correct base64 format",
-		"Mobile":       "Must be a valid mobile phone number",
-		"Tel":          "Must be a valid phone number",
-		"Phone":        "Must be a valid phone or mobile number",
-		"ZipCode":      "Must be a valid zip code",
-	})
 }
 
 func (c *UserController) Prepare() {
@@ -62,18 +36,22 @@ func (c *UserController) Prepare() {
 	// }
 	var lang string
 	lang = c.Ctx.Input.Query("lang")
+	lang = helpers.CorrectlanguageCode(lang)
 	if len(lang) == 0 {
 		lang = c.Ctx.GetCookie("lang")
+		lang = helpers.CorrectlanguageCode(lang)
 		if len(lang) != 0 {
 			c.Data["Lang"] = lang
 		} else {
 			lang = c.Ctx.Input.Header("Accept-Language")
 			if len(lang) > 4 {
-				lang := lang[:5] // Only compare first 5 letters.
+				lang = lang[:5] // Only compare first 5 letters.
+				lang = helpers.CorrectlanguageCode(lang)
 				if lang == "en-US" || lang == "hi-IN" {
 					c.Data["Lang"] = lang
 				} else {
-					c.Data["Lang"] = "en-US"
+					lang = "en-US"
+					c.Data["Lang"] = lang
 				}
 			}
 		}
@@ -105,7 +83,6 @@ func (c *UserController) Login() {
 	}
 	HashPassWord, err := models.GetUserByEmail(user.Email)
 	if err != nil {
-		fmt.Println("<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>,", err.Error())
 		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
@@ -155,18 +132,30 @@ func (c *UserController) Logout() {
 // @Title Get All
 // @Description get Users
 // @Param lang query string false "use en-US or hi-IN"
+// @Param page query int false "For pagination"
+// @Param limit query int false "per page user"
 // @Param   Authorization   header  string  true  "Bearer YourAccessToken"
 // @Success 200 {object} models.Users
 // @Failure 403
-// @router /secure/users [get]
+// @router /secure/users/ [get]
 func (c *UserController) GetAllUser() {
 	lang := c.Ctx.Input.GetData("Lang").(string)
-	user, err := models.GetAllUser()
+	users, err := models.GetAllUser()
 	if err != nil {
 		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
-	helpers.ApiSuccess(c.Ctx, user, http.StatusOK, 1000)
+	page, _ := c.GetInt("page")
+	limit, _ := c.GetInt("limit")
+	statIndex, endIndex, pagination, err := helpers.Pagination(page, limit, len(users))
+	if err != nil {
+		helpers.ApiFailure(c.Ctx, err.Error(), http.StatusBadRequest, 1001)
+		return
+	}
+	output := users[statIndex:endIndex]
+	result := map[string]interface{}{"pagination": pagination, "Data": output}
+	helpers.ApiSuccess(c.Ctx, result, http.StatusOK, 1000)
+	// helpers.ApiSuccess(c.Ctx, users, http.StatusOK, 1000)
 }
 
 // PostRegisterNewUser ...
@@ -189,36 +178,31 @@ func (c *UserController) PostRegisterNewUser() {
 		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
-	valid := validation.Validation{}
-	_, err = valid.Valid(&bodyData)
-	if err != nil {
-		helpers.ApiFailure(c.Ctx, err.Error(), http.StatusBadRequest, 1001)
+	valid, errString := models.Validate(lang, &bodyData)
+	if !valid {
+		helpers.ApiFailure(c.Ctx, errString, http.StatusBadRequest, 1001)
 		return
 	}
-	// helpers.ApiFailure(c.Ctx, b, http.StatusBadRequest, 1001)
-	// return
 	err = bodyData.NewUserValidate()
 	if err != nil {
 		helpers.ApiFailure(c.Ctx, err.Error(), http.StatusBadRequest, 1001)
 		return
 	}
 	data, _ := models.GetUserByEmail(bodyData.Email)
-
 	if data.Email == bodyData.Email {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, "DUPLICATE_EMAIL"), http.StatusBadRequest, 10001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, "DUPLICATE_EMAIL"), http.StatusBadRequest, 1001)
 		return
 	}
-
 	output, err := models.InsertNewUser(bodyData)
 	if err != nil {
 		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
-	common.VerifyEmail(output.Email, output.FirstName)
+	go common.VerifyEmail(output.Email, output.FirstName)
 	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1002)
 }
 
-// UpdateUser ...
+// UpdateUser .
 // @Title update User
 // @Desciption update users
 // @Param body body models.UpdateUserRequest true "update New User"
@@ -233,6 +217,11 @@ func (c *UserController) UpdateUser() {
 	err := helpers.RequestBody(c.Ctx, &bodyData)
 	if err != nil {
 		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
+		return
+	}
+	valid, errString := models.Validate(lang, &bodyData)
+	if !valid {
+		helpers.ApiFailure(c.Ctx, errString, http.StatusBadRequest, 1001)
 		return
 	}
 	err = bodyData.UdateUserValidate()
@@ -257,7 +246,7 @@ func (c *UserController) UpdateUser() {
 		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
-	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1003)
+	helpers.ApiSuccess(c.Ctx, helpers.GetLangaugeMessage(lang, output.(string)), http.StatusOK, 1003)
 }
 
 // ResetPassword ...
@@ -490,7 +479,7 @@ func (c *UserController) GetVerifiedUsers() {
 
 	var output []models.UserDetailsRequest
 	for _, user := range user {
-		userDetails := models.UserDetailsRequest{Id: user.Id, FirstName: user.FirstName, LastName: user.LastName, Email: user.Email, Age: user.Age}
+		userDetails := models.UserDetailsRequest{Id: user.Id, FirstName: user.FirstName, LastName: user.LastName, Email: user.Email, Age: user.Age, CreatedAt: helpers.GetFormatedDate(user.CreatedAt, "yyyy-mm-dd")}
 		output = append(output, userDetails)
 	}
 	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1000)
@@ -520,7 +509,7 @@ func (c *UserController) SearchUser() {
 	}
 	var output []models.UserDetailsRequest
 	for _, user := range user {
-		userDetails := models.UserDetailsRequest{Id: user.Id, FirstName: user.FirstName, LastName: user.LastName, Email: user.Email, Age: user.Age}
+		userDetails := models.UserDetailsRequest{Id: user.Id, FirstName: user.FirstName, LastName: user.LastName, Email: user.Email, Age: user.Age, Country: user.Country, CreatedAt: helpers.GetFormatedDate(user.CreatedAt, "yyyy-mm-dd")}
 		output = append(output, userDetails)
 	}
 	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1000)
@@ -830,4 +819,4 @@ func (c *UserController) Checkmodul() {
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<httplib>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
 
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< checking end >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< checking end >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

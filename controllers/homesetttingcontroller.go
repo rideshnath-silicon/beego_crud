@@ -15,7 +15,6 @@ type HomeSettingController struct {
 	beego.Controller
 }
 
-
 func (c *HomeSettingController) Prepare() {
 	// Set the language for the current request
 	// langs := []string{"en-US", "hi-IN"} // List of supported languages
@@ -28,18 +27,22 @@ func (c *HomeSettingController) Prepare() {
 	// }
 	var lang string
 	lang = c.Ctx.Input.Query("lang")
+	lang = helpers.CorrectlanguageCode(lang)
 	if len(lang) == 0 {
 		lang = c.Ctx.GetCookie("lang")
+		lang = helpers.CorrectlanguageCode(lang)
 		if len(lang) != 0 {
 			c.Data["Lang"] = lang
 		} else {
 			lang = c.Ctx.Input.Header("Accept-Language")
 			if len(lang) > 4 {
-				lang := lang[:5] // Only compare first 5 letters.
+				lang = lang[:5] // Only compare first 5 letters.
+				lang = helpers.CorrectlanguageCode(lang)
 				if lang == "en-US" || lang == "hi-IN" {
 					c.Data["Lang"] = lang
 				} else {
-					c.Data["Lang"] = "en-US"
+					lang = "en-US"
+					c.Data["Lang"] = lang
 				}
 			}
 		}
@@ -48,6 +51,7 @@ func (c *HomeSettingController) Prepare() {
 	}
 	c.Ctx.SetCookie("lang", lang)
 }
+
 
 // GetHomeSetting ...
 // @Title get home settingd
@@ -93,6 +97,11 @@ func (c *HomeSettingController) InsertNewHomeSetting() {
 	}
 	// fmt.Println(bodyData)
 	json.Unmarshal(c.Ctx.Input.RequestBody, &bodyData)
+	valid, errString := models.Validate(lang, &bodyData)
+	if !valid {
+		helpers.ApiFailure(c.Ctx, errString, http.StatusBadRequest, 1001)
+		return
+	}
 	err := bodyData.NewHomeSettingValidate()
 	if err != nil {
 		helpers.ApiFailure(c.Ctx, err.Error(), http.StatusBadRequest, 1001)
@@ -142,6 +151,11 @@ func (c *HomeSettingController) UpdateHomeSeting() {
 		return
 	}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &bodyData)
+	valid, errString := models.Validate(lang, &bodyData)
+	if !valid {
+		helpers.ApiFailure(c.Ctx, errString, http.StatusBadRequest, 1001)
+		return
+	}
 	err := bodyData.UpdateHomeSetingValidate()
 	if err != nil {
 		helpers.ApiFailure(c.Ctx,  err.Error(), http.StatusBadRequest, 1001)

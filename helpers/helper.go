@@ -4,6 +4,7 @@ import (
 	"crypto/rand"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"mime/multipart"
 	"net/smtp"
@@ -166,7 +167,7 @@ func SendMailOTp(userEmail string, name string, subject string, body string) (bo
 	}
 	return true, nil
 }
-	
+
 func GenerateOtp() string {
 	var table = [...]byte{'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'}
 	b := make([]byte, 4)
@@ -188,7 +189,7 @@ func GetLangaugeMessage(lang string, langCode string) string {
 	err := o.Raw(sql, langCode).QueryRow(&langcodeid)
 	// fmt.Println(langcodeid)
 	if err != nil {
-		return err.Error()
+		return GetLangaugeMessage(lang, "LANGAUGE_CODE_ERROR")
 	}
 	var message string
 	switch lang {
@@ -196,14 +197,108 @@ func GetLangaugeMessage(lang string, langCode string) string {
 		sql := "SELECT value FROM engilsh_lang_message WHERE langcodeid = ?"
 		err := o.Raw(sql, langcodeid).QueryRow(&message)
 		if err != nil {
-			message = err.Error()
+			message = GetLangaugeMessage(lang, "LANGAUGE_CODE_ERROR")
 		}
 	case "hi-IN":
 		sql := "SELECT value FROM hindi_lang_message WHERE langcodeid = ?"
 		err := o.Raw(sql, langcodeid).QueryRow(&message)
 		if err != nil {
-			message = err.Error()
+			message = GetLangaugeMessage(lang, "LANGAUGE_CODE_ERROR")
 		}
 	}
 	return message
 }
+
+func GetFormatedDate(date time.Time, formate string) string {
+	var formatedDate string
+	switch formate {
+	case "dd-mm-yy":
+		inputTime := date
+		day, month, year := inputTime.Day(), inputTime.Month(), inputTime.Year()%100
+		formatedDate = fmt.Sprintf("%02d-%02d-%d", day, month, year)
+	case "dd-mm-yyyy":
+		inputTime := date
+		day, month, year := inputTime.Day(), inputTime.Month(), inputTime.Year()
+		formatedDate = fmt.Sprintf("%02d-%02d-%d", day, month, year)
+	case "yyyy-mm-dd":
+		inputTime := date
+		day, month, year := inputTime.Day(), inputTime.Month(), inputTime.Year()
+		formatedDate = fmt.Sprintf("%02d-%02d-%d", year, month, day)
+	case "mm-dd-yyyy":
+		inputTime := date
+		day, month, year := inputTime.Day(), inputTime.Month(), inputTime.Year()
+		formatedDate = fmt.Sprintf("%02d-%02d-%d", year, month, day)
+	case "dd-mm":
+		inputTime := date
+		day, month := inputTime.Day(), inputTime.Month()
+		formatedDate = fmt.Sprintf("%02d-%02d", day, month)
+	default:
+		formatedDate = "not formated"
+	}
+	return formatedDate
+}
+
+func CorrectlanguageCode(lang string) string {
+	var outPutstr string
+	if lang != "" {
+		splitResult := strings.Split(lang, "-")
+		firstStr := strings.ToLower(splitResult[0])
+		sectStr := strings.ToUpper(splitResult[1])
+		outPutstr = firstStr + "-" + sectStr
+		// fmt.Println(">>>>>>>>>>>>>>>>", outPutstr)
+	}
+	return outPutstr
+}
+
+func Pagination(page int, limit int, total int) (startIndex int, endIndex int, paginations interface{}, err error) {
+	var start int
+	var end int
+	type pagination struct {
+		PreviousPage  int64
+		CurrentPage   int64
+		NextPage      int64
+		LastPage      int64
+		PerPageRecord int64
+		TotalRecod    int64
+	}
+	if page == 0 {
+		page = 1
+	}
+	if limit == 0 {
+		limit = 10
+	}
+	pages := (total + limit - 1) / limit
+	start = (page - 1) * limit
+	if start > pages {
+		if start < total {
+		} else {
+			return 0, 0, 0, errors.New("last page is " + strconv.Itoa(pages) + " please enter a valid page")
+		}	
+	}
+	end = start + limit
+	if start >= total {
+		start = total
+		end = total
+	} else if end > total {
+		end = total
+	}
+	previouspage := page - 1
+	currentpage := page
+	nextpage := page + 1
+	if nextpage >= pages {
+		nextpage = 0
+	}
+	lastpage := pages
+	perpagerecode := limit
+	totalrecod := total
+	paginations = pagination{
+		PreviousPage:  int64(previouspage),
+		CurrentPage:   int64(currentpage),
+		NextPage:      int64(nextpage),
+		LastPage:      int64(lastpage),
+		PerPageRecord: int64(perpagerecode),
+		TotalRecod:    int64(totalrecod),
+	}
+	return start, end, paginations, nil
+}
+			

@@ -27,26 +27,31 @@ func (c *CarController) Prepare() {
 	// }
 	var lang string
 	lang = c.Ctx.Input.Query("lang")
+	lang = helpers.CorrectlanguageCode(lang)
 	if len(lang) == 0 {
 		lang = c.Ctx.GetCookie("lang")
+		lang = helpers.CorrectlanguageCode(lang)
 		if len(lang) != 0 {
 			c.Data["Lang"] = lang
 		} else {
 			lang = c.Ctx.Input.Header("Accept-Language")
 			if len(lang) > 4 {
-				lang := lang[:5] // Only compare first 5 letters.
+				lang = lang[:5] // Only compare first 5 letters.
+				lang = helpers.CorrectlanguageCode(lang)
 				if lang == "en-US" || lang == "hi-IN" {
 					c.Data["Lang"] = lang
 				} else {
-					c.Data["Lang"] = "en-US"
+					lang = "en-US"
+					c.Data["Lang"] = lang
 				}
 			}
 		}
 	} else {
 		c.Data["Lang"] = lang
 	}
-	c.Ctx.SetCookie("lang",lang)
+	c.Ctx.SetCookie("lang", lang)
 }
+
 
 // GetAllCars ...
 // @Title get cars
@@ -59,7 +64,7 @@ func (c *CarController) GetAllCars() {
 	lang := c.Ctx.Input.GetData("Lang").(string)
 	Data, err := models.GetAllCars()
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 	}
 	helpers.ApiSuccess(c.Ctx, Data, http.StatusOK, 1000)
 }
@@ -77,11 +82,11 @@ func (c *CarController) GetSingleCar() {
 	var bodyData models.GetcarRequest
 	err := helpers.RequestBody(c.Ctx, &bodyData)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 	}
 	Data, err := models.GetSingleCar(bodyData.Id)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 	}
 	helpers.ApiSuccess(c.Ctx, Data, http.StatusOK, 1000)
 }
@@ -99,12 +104,12 @@ func (c *CarController) GetCarUsingSearch() {
 	var bodyData models.SearchRequest
 	err := helpers.RequestBody(c.Ctx, &bodyData)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	cars, err := models.GetCarUsingSearch(bodyData.Search)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	var output []models.CarDetailsRequest
@@ -132,10 +137,15 @@ func (c *CarController) AddNewCar() {
 	lang := c.Ctx.Input.GetData("Lang").(string)
 	var cars models.GetNewCarRequest
 	if err := c.ParseForm(&cars); err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,"FORM_BODY"), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, "FORM_BODY"), http.StatusBadRequest, 1001)
 		return
 	}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &cars)
+	valid, errString := models.Validate(lang, &cars)
+	if !valid {
+		helpers.ApiFailure(c.Ctx, errString, http.StatusBadRequest, 1001)
+		return
+	}
 	err := cars.NewCarValidate()
 	if err != nil {
 		helpers.ApiFailure(c.Ctx, err.Error(), http.StatusBadRequest, 1001)
@@ -143,26 +153,26 @@ func (c *CarController) AddNewCar() {
 	}
 	_, fileheader, err := c.GetFile("file")
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,"ERROR_DIRECTORY"), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, "ERROR_DIRECTORY"), http.StatusBadRequest, 1001)
 		return
 	}
 	var carType string = string(cars.Type)
 	cars.Type, err = common.NewCarType(carType)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	filedName := "file"
 	uploadDir := "./uploads/car/images/"
 	filepaths, err := helpers.UploadFile(c.Controller, filedName, fileheader, uploadDir)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	cars.CarImage = filepaths
 	data, err := models.InsertNewCar(cars)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	helpers.ApiSuccess(c.Ctx, data, http.StatusOK, 1002)
@@ -185,18 +195,23 @@ func (c *CarController) UpdateCar() {
 	lang := c.Ctx.Input.GetData("Lang").(string)
 	var cars models.UpdateCarRequest
 	if err := c.ParseForm(&cars); err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &cars)
+	valid, errString := models.Validate(lang, &cars)
+	if !valid {
+		helpers.ApiFailure(c.Ctx, errString, http.StatusBadRequest, 1001)
+		return
+	}
 	err := cars.UpdateCarValidate()
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	data, err := models.GetSingleCar(cars.Id)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	_, fileheader, err := c.GetFile("file")
@@ -216,13 +231,13 @@ func (c *CarController) UpdateCar() {
 		var carType string = string(cars.Type)
 		cars.Type, err = common.NewCarType(carType)
 		if err != nil {
-			helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+			helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 			return
 		}
 		cars.CarImage = data.CarImage
 		res, err := models.UpdateCar(cars)
 		if err != nil {
-			helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+			helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 			return
 		}
 		helpers.ApiSuccess(c.Ctx, res, http.StatusOK, 1003)
@@ -231,25 +246,25 @@ func (c *CarController) UpdateCar() {
 	var carType string = string(cars.Type)
 	cars.Type, err = common.NewCarType(carType)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	filedName := "file"
 	uploadDir := "./uploads/car/images/"
 	filepaths, err := helpers.UploadFile(c.Controller, filedName, fileheader, uploadDir)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	cars.CarImage = filepaths
 	output, err := models.UpdateCar(cars)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	err = os.Remove(data.CarImage)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,"ERROR_DIRECTORY"), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, "ERROR_DIRECTORY"), http.StatusBadRequest, 1001)
 		return
 	}
 	helpers.ApiSuccess(c.Ctx, output, http.StatusOK, 1003)
@@ -268,22 +283,22 @@ func (c *CarController) DeleteCar() {
 	var car models.GetcarRequest
 	err := helpers.RequestBody(c.Ctx, &car)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	res, err := models.GetSingleCar(car.Id)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	data, err := models.DeleteCar(car.Id)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,err.Error()), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
 	err = os.Remove(res.CarImage)
 	if err != nil {
-		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang,"ERROR_DIRECTORY"), http.StatusBadRequest, 1001)
+		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, "ERROR_DIRECTORY"), http.StatusBadRequest, 1001)
 		return
 	}
 	helpers.ApiSuccess(c.Ctx, data, http.StatusOK, 1004)

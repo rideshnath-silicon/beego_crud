@@ -16,7 +16,7 @@ func GetUserByEmail(username string) (Users, error) {
 	// orm.Debug = true
 	num, err := o.QueryTable(new(Users)).SetCond(orm.NewCondition().Or("phone_number", username).Or("email", username)).All(&user)
 	if err != nil {
-		return user,  errors.New("DATABASE_ERROR")
+		return user, errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
 		return user, errors.New("LOGIN_ERROR")
@@ -51,20 +51,19 @@ func GetUserDetails(id interface{}) (Users, error) {
 	return user, nil
 }
 
+// func GetAllUser(limit int , offset int) ([]orm.Params, error) {
 func GetAllUser() ([]orm.Params, error) {
 	o := orm.NewOrm()
 	// orm.Debug = true
 	var user []orm.Params
-	sqlQuery := `
-		SELECT u.id as user_id , u.first_name as name, u.last_name as last_name , u.email  as user_email , u.age as user_age, c.name as country_name
+	sqlQuery := `SELECT u.id as user_id , u.first_name as name, u.last_name as last_name , u.email  as user_email , u.age as user_age, c.name as country_name,created_at
 		FROM users as u
-		JOIN mod_country_master as c ON c.country_id = u.country	
-		
-	`
+		JOIN mod_country_master as c ON c.country_id = u.country
+		order by u.id asc `
 	_, err := o.Raw(sqlQuery).Values(&user)
 	if err != nil {
-		return nil,  errors.New("DATABASE_ERROR")
-	}
+		return nil, errors.New("DATABASE_ERROR")
+	}	
 	return user, nil
 }
 
@@ -133,7 +132,7 @@ func UpdateUser(Data UpdateUserRequest) (interface{}, error) {
 	o := orm.NewOrm()
 	num, err := o.Update(&user, "id", "first_name", "last_name", "country", "email", "age", "role", "updated_at", "phone_number")
 	if err != nil {
-		return nil,errors.New("DATABASE_ERROR")
+		return nil, errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
 		return user, errors.New("DATABASE_ERROR")
@@ -176,15 +175,15 @@ func VerifyEmailOTP(username string, otp string) (Users, error) {
 		return user, errors.New("DATABASE_ERROR")
 	}
 	if num == 0 {
-		return user,errors.New("DATABASE_ERROR")
+		return user, errors.New("DATABASE_ERROR")
 	}
 	return user, nil
 }
 
 func UpdateVerified(id uint) error {
 	o := orm.NewOrm()
-	var user = Users{Id: id, Verified: "yes"}
-	num, err := o.Update(&user, "verified")
+	var user = Users{Id: id, Verified: "yes", UpdatedAt: time.Now()}
+	num, err := o.Update(&user, "verified", "updated_at")
 	if err != nil {
 		return errors.New("DATABASE_ERROR")
 	}

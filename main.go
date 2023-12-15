@@ -3,16 +3,15 @@ package main
 import (
 	task "CarCrudv2/Task"
 	"CarCrudv2/healthcheck"
+	"CarCrudv2/models"
 	_ "CarCrudv2/routers"
 
 	"github.com/beego/beego/v2/client/orm"
 	"github.com/beego/beego/v2/core/admin"
 
 	// "github.com/beego/beego/v2/core/logs"
-
 	beego "github.com/beego/beego/v2/server/web"
 	"github.com/beego/i18n"
-
 	_ "github.com/lib/pq" // PostgreSQL driver
 )
 
@@ -21,6 +20,7 @@ func init() {
 	orm.RegisterDriver("postgres", orm.DRPostgres)
 	orm.RegisterDataBase("default", "postgres", connection)
 	// orm.RunSyncdb("default", false, true)
+	models.FormValidation()
 }
 
 func main() {
@@ -31,7 +31,7 @@ func main() {
 	beego.AddFuncMap("i18n", i18n.Tr)
 	beego.SetStaticPath("/static", "static")
 	// initLogs()
-	task.CreateTask("FirstTask", "0/25	 * * * * *", task.Demo)
+	// task.CreateTask("FirstTask", "0/25	 * * * * *", task.Demo)
 	task.CreateTask("SendMail", "0 */5 * * * *", task.SendPendingEmail)
 	admin.AddHealthCheck("database", &healthcheck.DatabaseCheck{})
 	beego.Run()
