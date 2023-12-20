@@ -85,11 +85,11 @@ func TestUpdatecar(t *testing.T) {
 				"type":"sedan"
 			}`)
 
-	r, err := http.NewRequest("POST", endPoint, bytes.NewBuffer(jsonStr))
+	r, err := http.NewRequest("PUT", endPoint, bytes.NewBuffer(jsonStr))
 	if err != nil {
 		t.Fatalf("Failed to create request: %v", err)
 	}
-	w := RunControllerRoute(endPoint, r, &car_ctrl, tokan, "post:UpdateCar")
+	w := RunControllerRoute(endPoint, r, &car_ctrl, tokan, "put:UpdateCar")
 
 	if w.Code != http.StatusOK {
 		t.Fatalf("Expected status code %d but got %d", http.StatusOK, w.Code)
