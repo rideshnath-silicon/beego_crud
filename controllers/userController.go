@@ -5,6 +5,7 @@ import (
 	"CarCrudv2/helpers/common"
 	"CarCrudv2/models"
 	"context"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"os"
@@ -379,7 +380,6 @@ func (c *UserController) VerifyOtpResetpassword() {
 		return
 	}
 	helpers.ApiSuccess(c.Ctx, helpers.GetLangaugeMessage(lang, uppass.(string)), http.StatusOK, 1003)
-
 }
 
 // VerifyUserEmail ...
@@ -679,7 +679,7 @@ func (c *UserController) DeleteUser() {
 
 // @Title Insert Update
 // @Description Insert update both
-// @Param body body models.NewUserRequest true "update New User"
+// @Param body body models.NewUserRequest true "Enter user details"
 // @Param lang query string false "use en-US or hi-IN"
 // @Param   Authorization   header  string  true  "Bearer YourAccessToken"
 // @Success 201 {object} models.Users
@@ -693,14 +693,19 @@ func (c *UserController) InsertUpdate() {
 		helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, err.Error()), http.StatusBadRequest, 1001)
 		return
 	}
-	fmt.Printf("%T", bodyData)
+	// fmt.Printf("%T", bodyData)
 	Tokan := c.Ctx.Input.Header("Authorization")
 	data := helpers.GetUserDataFromTokan(c.Ctx)
 	if bodyData.Email == data["Email"] {
-		req := httplib.Post("http://localhost:8080/v1/user/secure/update")
+		req := httplib.Put("http://localhost:8080/v1/user/secure/update")
 		req.Header("Authorization", Tokan)
+		req.Header("Accept-Language", lang)
 		req.Header("Content-Type", "application/json")
-		req.Body(bodyData)
+		userID, _ := json.Marshal(data["User_id"].(float64))
+		newRequestBody := append(c.Ctx.Input.RequestBody, []byte(userID)...)
+		// requestbody := []byte(c.Ctx.Input.RequestBody)
+		// postRequestBody := append(requestbody, bytes...)
+		req.Body(newRequestBody)
 		str, err := req.String()
 		if err != nil {
 			helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, "Not_Found"), http.StatusBadRequest, 1001)
@@ -710,8 +715,9 @@ func (c *UserController) InsertUpdate() {
 	} else {
 		req := httplib.Post("http://localhost:8080/v1/user/register")
 		req.Header("Authorization", Tokan)
+		req.Header("Accept-Language", lang)
 		req.Header("Content-Type", "application/json")
-		req.Body(bodyData)
+		req.Body(c.Ctx.Input.RequestBody)
 		str, err := req.String()
 		if err != nil {
 			helpers.ApiFailure(c.Ctx, helpers.GetLangaugeMessage(lang, "Not_Found"), http.StatusBadRequest, 1001)

@@ -834,7 +834,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "update New User",
+                        "description": "Enter user details",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.NewUserRequest"

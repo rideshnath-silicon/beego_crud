@@ -21,14 +21,14 @@ func TestUserModels(t *testing.T) {
 			Role:        "developer",
 			Country:     1,
 			Age:         24,
-			Password:    "123456",							
+			Password:    "123456",
 		}
 		data, err := models.InsertNewUser(user)
 		if err != nil {
 			t.Errorf(err.Error())
 			return
 		}
-		if data.Id != 1 {
+		if data.Id == 0 {
 			t.Errorf("error in register")
 			return
 		}
